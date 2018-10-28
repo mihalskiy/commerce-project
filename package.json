@@ -1,0 +1,75 @@
+{
+  "name": "codeurge",
+  "version": "2.0.0",
+  "description": "A personal portfolio for codeurge (Derek Keith)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next -p 1337",
+    "start": "next start -p 1337",
+    "build": "next build",
+    "lint": "eslint .",
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/codeurge/codeurge.git"
+  },
+  "author": "Derek Keith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeurge/codeurge/issues"
+  },
+  "engines": {
+    "node": "^8.10.0"
+  },
+  "postcss": {
+    "plugins": {
+      "lost": {},
+      "postcss-nested": {}
+    }
+  },
+  "homepage": "https://github.com/codeurge/codeurge#readme",
+  "dependencies": {
+    "animate.css": "^3.5.1",
+    "bootstrap": "^4.0.0-beta.2",
+    "devicon": "^2.0.0",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "next": "^4.0.2",
+    "rc-progress": "^2.0.6",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scrollchor": "^6.0.0",
+    "react-typewriter": "^0.4.1",
+    "react-waypoint": "^7.3.1",
+    "reactstrap": "^6.5.0",
+    "styled-jsx": "^2.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.5",
+    "babel-eslint": "^8.0.1",
+    "chai": "^4.1.2",
+    "chai-enzyme": "^1.0.0-beta.0",
+    "cypress": "^1.0.2",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "flow-bin": "^0.57.3",
+    "lost": "^8.2.0",
+    "node-sass": "^4.5.3",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-loader": "^2.0.7",
+    "postcss-nested": "^2.1.2",
+    "prettier": "^1.7.4",
+    "raw-loader": "^0.5.1",
+    "react-test-renderer": "^16.0.0",
+    "sass-loader": "^6.0.6",
+    "styled-jsx-plugin-postcss": "^0.1.1",
+    "styled-jsx-plugin-sass": "^0.2.0"
+  }
+}
