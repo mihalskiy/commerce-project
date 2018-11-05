@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Page from './Page/index';
 import * as serviceWorker from './serviceWorker';
 import 'typeface-roboto';
 import { BrowserRouter } from 'react-router-dom';
@@ -12,7 +12,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render((
     <BrowserRouter>
-        <App />
+        <Page />
     </BrowserRouter>
 ), document.getElementById('root'))
 
