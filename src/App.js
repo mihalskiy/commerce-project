@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Clock from './component/Clock';
 import Header from './component/Header';
-import NavigationIcon from '@material-ui/icons/Navigation';
 import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import red from '@material-ui/core/colors/red';
+import { NavLink, Switch, Route } from 'react-router-dom';
+import About from './component/About';
 
 
 class App extends Component {
@@ -30,7 +29,18 @@ class App extends Component {
                       </Button>
                   </div>
           </div>
-        <Clock/>
+          <nav>
+              <ul>
+                  <li><NavLink to='/'>Home</NavLink></li>
+                  <li><NavLink to='/about'>About</NavLink></li>
+                  <li><NavLink to='/contact'>Contact</NavLink></li>
+              </ul>
+          </nav>
+          <Route path="/about" component={About}/>
+
+
+          <Clock/>
+
       </div>
     );
   }
