@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
-import Header from './Header'
 import Button from "@material-ui/core/Button/Button";
-
 export default class Home extends Component {
 
 
     render() {
         return (
             <div>
-                <Header />
                 <div className="img-with-item">
-                    <img src={require("../img/welcome.jpg")} alt="Snow" />
+                    <div className="nav-img"></div>
                     {/*<div className="bottom-left">Bottom Left</div>
                   <div className="top-left">Top Left</div>
                   <div className="top-right">Top Right</div>
@@ -27,9 +24,28 @@ export default class Home extends Component {
                         </Button>
                     </div>
                 </div>
+
+                <div className="info">
+                    <h2>Зачаем?</h2>
+                    <p>Бренды приносят рекламные возможности внутри компании, маркетологи используют экспертов для проектной
+                        работы. Новая реальность заключается в том, что клиенты сокращают расходы, но хотят творчества
+                        агентства на уровне агентства. Для тех клиентов мы создали BrainWith.</p>
+                </div>
+
+                <div className="align-info">
+                    <div className="info-with-item">
+                        <img src={require('../img/create-site.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+
+                    <div className="info-with-item">
+                        <img src={require('../img/create-site2.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+                </div>
+
+
             </div>
-
         )
-
-
+    }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Page from './Page/index';
+import './index.scss';
+import Page from './page/index';
 import * as serviceWorker from './serviceWorker';
 import 'typeface-roboto';
 import { BrowserRouter } from 'react-router-dom';
