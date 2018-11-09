@@ -89,6 +89,25 @@ export default class Home extends Component {
                 </div>
 
 
+                <div className="info">
+                    <h2>Связаться с нами</h2>
+                    <p>Мы также можем управлять вашим проектом. Наша команда имеет многолетний опыт работы в качестве креативных директоров и в качестве одного из ведущих мировых рекламных агентств, плюс мы знаем все объявления на платформе лично. Мы будем работать над BrainWith для вас. Всегда экономно, потому что на BrainWith вы можете приобрести креативность по часам.</p>
+                </div>
+
+                <div className="align-info">
+                    <div className="info-with-item">
+                        <img src={require('../img/create.png')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+
+                    <div className="info-with-item">
+                        <img src={require('../img/create2.png')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+                </div>
+
+
+
             </div>
         )
     }
