@@ -102,3 +102,12 @@
     padding: 15px 21px;
   }
 }
+
+.catalog {
+  @extend .align-info;
+  &:first-of-type {
+    margin-right: 0;
+  }
+  width: 32.3%;
+  margin-bottom: 20px;
+}

@@ -44,6 +44,50 @@ export default class Home extends Component {
                     </div>
                 </div>
 
+                <div className="info">
+                    <h2>Снимайте объявления самостоятельно</h2>
+                    <p>Новая реальность требует для предпринимательских внештатных объявлений. Работа непосредственно для клиентов означает возможность вести переговоры о расходах, нанимать других для работы и управления проектом. Все объявления выбираются только приглашением.</p>
+                </div>
+
+                <div className="catalog-item">
+                    <div className="info-with-item catalog">
+                        <img src={require('../img/create-site.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+
+                    <div className="info-with-item catalog">
+                        <img src={require('../img/create-site2.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+                    <div className="info-with-item catalog">
+                        <img src={require('../img/create-site.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+
+                    <div className="info-with-item catalog">
+                        <img src={require('../img/create-site2.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+                    <div className="info-with-item catalog">
+                        <img src={require('../img/create-site.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+
+                    <div className="info-with-item catalog">
+                        <img src={require('../img/create-site2.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+                    <div className="info-with-item catalog">
+                        <img src={require('../img/create-site.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+
+                    <div className="info-with-item catalog">
+                        <img src={require('../img/create-site2.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+                </div>
+
 
             </div>
         )
