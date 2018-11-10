@@ -34,12 +34,12 @@ export default class Home extends Component {
 
                 <div className="align-info">
                     <div className="info-with-item">
-                        <img src={require('../img/create-site.jpg')} alt="create-site"/>
+                        <img src={require('../img/design/create-site.jpg')} alt="create-site"/>
                         <a href="/">Как работает просмотр аудио / видео?</a>
                     </div>
 
                     <div className="info-with-item">
-                        <img src={require('../img/create-site2.jpg')} alt="create-site"/>
+                        <img src={require('../img/design/create-site2.jpg')} alt="create-site"/>
                         <a href="/">Как работает просмотр аудио / видео?</a>
                     </div>
                 </div>
@@ -51,39 +51,39 @@ export default class Home extends Component {
 
                 <div className="catalog">
                     <div className="catalog-item ">
-                        <img src={require('../img/create-site.jpg')} alt="create-site"/>
+                        <img src={require('../img/design/create-site.jpg')} alt="create-site"/>
                         <a href="/">Как работает просмотр аудио / видео?</a>
                     </div>
 
                     <div className="catalog-item">
-                        <img src={require('../img/create-site2.jpg')} alt="create-site"/>
+                        <img src={require('../img/design/create-site2.jpg')} alt="create-site"/>
                         <a href="/">Как работает просмотр аудио / видео?</a>
                     </div>
                     <div className="catalog-item">
-                        <img src={require('../img/create-site.jpg')} alt="create-site"/>
-                        <a href="/">Как работает просмотр аудио / видео?</a>
-                    </div>
-
-                    <div className="catalog-item">
-                        <img src={require('../img/create-site2.jpg')} alt="create-site"/>
-                        <a href="/">Как работает просмотр аудио / видео?</a>
-                    </div>
-                    <div className="catalog-item">
-                        <img src={require('../img/create-site.jpg')} alt="create-site"/>
+                        <img src={require('../img/design/create-site.jpg')} alt="create-site"/>
                         <a href="/">Как работает просмотр аудио / видео?</a>
                     </div>
 
                     <div className="catalog-item">
-                        <img src={require('../img/create-site2.jpg')} alt="create-site"/>
+                        <img src={require('../img/design/create-site2.jpg')} alt="create-site"/>
                         <a href="/">Как работает просмотр аудио / видео?</a>
                     </div>
                     <div className="catalog-item">
-                        <img src={require('../img/create-site.jpg')} alt="create-site"/>
+                        <img src={require('../img/design/create-site.jpg')} alt="create-site"/>
                         <a href="/">Как работает просмотр аудио / видео?</a>
                     </div>
 
                     <div className="catalog-item">
-                        <img src={require('../img/create-site2.jpg')} alt="create-site"/>
+                        <img src={require('../img/design/create-site2.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+                    <div className="catalog-item">
+                        <img src={require('../img/design/create-site.jpg')} alt="create-site"/>
+                        <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+
+                    <div className="catalog-item">
+                        <img src={require('../img/design/create-site2.jpg')} alt="create-site"/>
                         <a href="/">Как работает просмотр аудио / видео?</a>
                     </div>
                 </div>
@@ -96,13 +96,128 @@ export default class Home extends Component {
 
                 <div className="align-info">
                     <div className="info-with-item">
-                        <img src={require('../img/create.png')} alt="create-site"/>
+                        <img src={require('../img/design/create.png')} alt="create-site"/>
                         <a href="/">Как работает просмотр аудио / видео?</a>
                     </div>
 
                     <div className="info-with-item">
-                        <img src={require('../img/create2.png')} alt="create-site"/>
+                        <img src={require('../img/design/create2.png')} alt="create-site"/>
                         <a href="/">Как работает просмотр аудио / видео?</a>
+                    </div>
+                </div>
+
+                <div className="info">
+                    <h2>Продукты BrainWith</h2>
+                    <p>Одна цена. Один раунд ревизий. Быстрая доставка. Доставка по электронной почте.</p>
+                </div>
+
+                <div className="price">
+                    <div className="price-list">
+                        <img src={require('../img/price/d-domain-reseller_01.png')} alt="create-site"/>
+                        <div className="price-item">
+                            <h2>Дизайн Логотипа</h2>
+                            <p>5 логотипов, доставленных в течение 48 часов
+                                1 бесплатный раунд пересмотров</p>
+                            <Button variant="extendedFab" aria-label="Delete" className="button">
+                                500$ Заказать сейчас
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="price-list">
+                        <img src={require('../img/price/Hosting-Header-Img.svg')} alt="create-site"/>
+                        <div className="price-item">
+                            <h2>Дизайн Логотипа</h2>
+                            <p>5 логотипов, доставленных в течение 48 часов
+                                1 бесплатный раунд пересмотров</p>
+                            <Button variant="extendedFab" aria-label="Delete" className="button">
+                                500$ Заказать сейчас
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="price-list">
+                        <img src={require('../img/price/il-website-features-page-hosting-webhosting.svg')} alt="create-site"/>
+                        <div className="price-item">
+                            <h2>Дизайн Логотипа</h2>
+                            <p>5 логотипов, доставленных в течение 48 часов
+                                1 бесплатный раунд пересмотров</p>
+                            <Button variant="extendedFab" aria-label="Delete" className="button">
+                                500$ Заказать сейчас
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="price-list">
+                        <img src={require('../img/price/rime-clipart-theft-20.png')} alt="create-site"/>
+                        <div className="price-item">
+                            <h2>Дизайн Логотипа</h2>
+                            <p>5 логотипов, доставленных в течение 48 часов
+                                1 бесплатный раунд пересмотров</p>
+                            <Button variant="extendedFab" aria-label="Delete" className="button">
+                                500$ Заказать сейчас
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="price-list">
+                        <img src={require('../img/price/Translations-Webshop-en.svg')} alt="create-site"/>
+                        <div className="price-item">
+                            <h2>Дизайн Логотипа</h2>
+                            <p>5 логотипов, доставленных в течение 48 часов
+                                1 бесплатный раунд пересмотров</p>
+                            <Button variant="extendedFab" aria-label="Delete" className="button">
+                                500$ Заказать сейчас
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="price-list">
+                        <img src={require('../img/price/Translations-WSB-en.svg')} alt="create-site"/>
+                        <div className="price-item">
+                            <h2>Дизайн Логотипа</h2>
+                            <p>5 логотипов, доставленных в течение 48 часов
+                                1 бесплатный раунд пересмотров</p>
+                            <Button variant="extendedFab" aria-label="Delete" className="button">
+                                500$ Заказать сейчас
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="price-list">
+                        <img src={require('../img/price/webapp.jpg')} alt="create-site"/>
+                        <div className="price-item">
+                            <h2>Дизайн Логотипа</h2>
+                            <p>5 логотипов, доставленных в течение 48 часов
+                                1 бесплатный раунд пересмотров</p>
+                            <Button variant="extendedFab" aria-label="Delete" className="button">
+                                500$ Заказать сейчас
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="price-list">
+                        <img src={require('../img/price/website-seo-page.svg')} alt="create-site"/>
+                        <div className="price-item">
+                            <h2>Дизайн Логотипа</h2>
+                            <p>5 логотипов, доставленных в течение 48 часов
+                                1 бесплатный раунд пересмотров</p>
+                            <Button variant="extendedFab" aria-label="Delete" className="button">
+                                500$ Заказать сейчас
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="price-list">
+                        <img src={require('../img/price/d-domain-reseller_01.png')} alt="create-site"/>
+                        <div className="price-item">
+                            <h2>Дизайн Логотипа</h2>
+                            <p>5 логотипов, доставленных в течение 48 часов
+                                1 бесплатный раунд пересмотров</p>
+                            <Button variant="extendedFab" aria-label="Delete" className="button">
+                                500$ Заказать сейчас
+                            </Button>
+                        </div>
                     </div>
                 </div>
 
