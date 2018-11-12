@@ -13,7 +13,7 @@ import gamestackLoginPlaceholder from '../assets/gamestack-login-placeholder.jpg
 import gamestackList from '../assets/gamestack-list.jpg';
 import gamestackListLarge from '../assets/system-security.jpg';
 import gamestackListPlaceholder from '../assets/system-security.jpg';
-import sliceProject from '../assets/slice-project.png';
+import sliceProject from '../assets/380534.png';
 import sliceProjectLarge from '../assets/slice-project-large.png';
 import sliceProjectPlaceholder from '../assets/slice-project-placeholder.png';
 
@@ -205,9 +205,9 @@ export default class Home extends Component {
           sectionRef={section => this.projectThree = section}
           visible={visibleSections.includes(this.projectThree)}
           index="03"
-          title="Biomedical image collaboration"
-          description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
-          buttonText="View Project"
+          title="Блог"
+          description="Выбор технологий для большого и не очень большого веб-проекта"
+          buttonText="Перейти к блогу"
           buttonTo="/projects/slice"
           imageSrc={[`${sliceProject} 980w, ${sliceProjectLarge} 1376w`]}
           imageAlt={['Annotating a biomedical image in the Slice app']}

@@ -18,16 +18,16 @@ const ProfileText = ({ status }) => (
   <React.Fragment>
     <ProfileTitle>
       <DecoderText
-        text="Hi there"
+        text="О НАС"
         start={status === 'entering'}
         offset={140}
       />
     </ProfileTitle>
     <ProfileDescription status={status}>
-      I’m Hamish, currently I live in Sydney working as the lead product designer at <Anchor href={SparrowLink} target="_blank" rel="noopener noreferrer">Smart Sparrow</Anchor>. My projects include UX design, UI animations, and icon illustration. Being comfortable with code allows me to rapidly prototype and validate experiences.
+        Мы команда профессионалов, жаждущих и мотивированных к новым проектам <Anchor href={SparrowLink} target="_blank" rel="noopener noreferrer">Почему мы?</Anchor>.
     </ProfileDescription>
     <ProfileDescription status={status}>
-      In my spare time I like to practice Brazilian Jiu Jitsu, play video games, and <Anchor href={ModLink} target="_blank" rel="noopener noreferrer">make mods</Anchor>. I’m always down for hearing about new projects, so feel free to drop me a line.
+        За время своей работы мы разработали более 600 лендингов работающих во всех странах мира и генерирующих своим заказчикам тысячи обращений в сутки. Большинство клиентов заказали у нас по несколько лендингов на каждое направление своего бизнеса
     </ProfileDescription>
   </React.Fragment>
 );
@@ -51,12 +51,12 @@ const Profile = ({
                 style={{ marginTop: 20 }}
                 icon="send"
               >
-                Send me a message
+                Определить стоимость
             </ProfileButton>
             </ProfileColumn>
             <ProfileColumn>
               <ProfileTag status={status}>
-                <ProfileTagText status={status}>About Me</ProfileTagText>
+                <ProfileTagText status={status}>О нас</ProfileTagText>
               </ProfileTag>
               <ProfileImageContainer status={status}>
                 <ProfileImage

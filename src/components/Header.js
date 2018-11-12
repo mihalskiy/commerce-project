@@ -78,8 +78,8 @@ const Header = ({ menuOpen, toggleMenu }) => (
     </HeaderLogo>
     <HeaderNav role="navigation">
       <HeaderNavList>
-        <HeaderNavLink to="/#projects">Projects</HeaderNavLink>
-        <HeaderNavLink to="/#details">Details</HeaderNavLink>
+        <HeaderNavLink to="/#projects">Портфолио</HeaderNavLink>
+        <HeaderNavLink to="/#details">О нас</HeaderNavLink>
       </HeaderNavList>
       <HeaderIcons />
     </HeaderNav>
@@ -161,6 +161,7 @@ const HeaderNavList = styled.div`
 
 const HeaderNavLink = styled(NavLink)`
   padding: 20px;
+  display: flex;
   color: ${props => props.theme.colorText(0.8)};
   text-decoration: none;
   font-weight: 500;

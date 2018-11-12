@@ -25,16 +25,14 @@ const NotFound = () => (
                 <DecoderText text="Error: Redacted" start offset={100} />
               </NotFoundSubHeading>
               <NotFoundDescription status={status}>
-                This page could not be found. It either doesn't exist or was deleted.
-                Or perhaps you don't exist.
+                  Эта страница не найдена. Либо eщё не существует, либо была удалена. Или, может быть, вас нет.
               </NotFoundDescription>
               <NotFoundButton
                 secondary
                 status={status}
                 to="/"
                 icon="chevronRight"
-              >
-                Back to homepage
+              >Вернуться на главную страницу
               </NotFoundButton>
             </NotFoundText>
           </NotfoundDetails>

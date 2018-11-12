@@ -21,9 +21,9 @@ const prerender = window.location.port === '45678';
 const title = 'АКТУАЛЬНЫЕ ЦЕНЫ';
 const description = 'Наши цены — адекватные и умеренные. Все оплаты мы разбиваем на 3 этапа, это удобно и доступно. Вы можете получить очень качественный сайт на основе готового решения, с уникальным дизайном по цене от 13000 грн.';
 const roles = [
-  'Simple',
-  'Standard',
-  'Ultimate',
+  'Простой',
+  'Стандарт',
+  'Лучший',
 ];
 
 const ProjectSPR = ({ status }) => (
@@ -51,7 +51,7 @@ const ProjectSPR = ({ status }) => (
               <div id="container">
                   <div className="whole">
                       <div className="type">
-                          <p>Simple</p>
+                          <p>Простой</p>
                       </div>
                       <div className="plan">
 
@@ -72,7 +72,7 @@ const ProjectSPR = ({ status }) => (
                   </div>
                   <div className="whole">
                       <div className="type standard">
-                          <p>Standard</p>
+                          <p>Стандарт</p>
                       </div>
                       <div className="plan">
 
@@ -93,7 +93,7 @@ const ProjectSPR = ({ status }) => (
 
                 <div className="whole ">
                     <div className="type ultimate">
-                        <p>Ultimate</p>
+                        <p>Лучший</p>
                     </div>
                     <div className="plan">
 
