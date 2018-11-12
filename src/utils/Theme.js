@@ -14,6 +14,7 @@ export default {
   colorWhite: alpha => `rgba(255, 255, 255, ${alpha})`,
   colorBackground: alpha => `rgba(17, 17, 17, ${alpha})`,
   colorText: alpha => `rgba(255, 255, 255, ${alpha})`,
+  colorTable: alpha => ` ${alpha}`,
   colorPrimary: alpha => `rgba(0, 229, 255, ${alpha})`,
   curveFastoutSlowin: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
   clipPath: size => `polygon(0 0, 100% 0, 100% calc(100% - ${size}px), calc(100% - ${size}px) 100%, 0 100%)`,

@@ -61,7 +61,6 @@ export const ProjectHeader = ({ title, description, url, roles }) => (
           style={{ paddingLeft: '3px' }}
           icon="chevronRight"
           href={url}
-          target="_blank"
           rel="noopener noreferrer"
         >
           Заказать
@@ -74,6 +73,28 @@ export const ProjectHeader = ({ title, description, url, roles }) => (
       </ProjectMeta>
     </ProjectHeaderInner>
   </ProjectHeaderContainer>
+);
+
+export const ProjectPriceTable = ({ name, currency, price, cent, title, fields }) => (
+    <ProjectTable>
+            <ProjectDetails entered={!prerender}>
+                <ProjectTableName>{name}</ProjectTableName>
+                <ProjectTableItem>
+                    <ProjectTableItemHeder>
+                        <span>{currency}</span>{price}<sup>{cent}</sup>
+                        <ProjectTableItemHederTitle>{title}</ProjectTableItemHederTitle>
+                    </ProjectTableItemHeder>
+                    <div>
+                        <ProjectTableContent>
+                            {fields && fields.map((field, index) => (
+                                <ProjectTableList key={`role_${index}`}>{field}</ProjectTableList>
+                            ))}
+                        </ProjectTableContent>
+                    </div>
+
+                </ProjectTableItem>
+            </ProjectDetails>
+    </ProjectTable>
 );
 
 export const ProjectContainer = styled.article`
@@ -391,4 +412,71 @@ export const ProjectSectionText = styled.p`
     font-size: 18px;
     margin-top: 22px;
   }
+`;
+
+export const ProjectTable = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: ${props => props.theme.colorTable('#eac80d')};
+    height: 62px;
+    border-bottom: 3px solid #bfa30c;
+`;
+export const ProjectTableName = styled.span`
+  font-family:'Open Sans';
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  font-size: 29px;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+`;
+
+export const ProjectTableItem = styled.div`
+  width: 300px;
+  background-color: #2b2937;
+  border-radius: 0px 0px 5px 5px;
+  font-family:'Open Sans';
+  font-style: condensed;
+  font-size: 90px;
+  color: white;
+  text-align: center;
+`;
+
+export const ProjectTableItemHeder = styled.div`
+    div, span{
+        font-size: 32px;
+    }
+    sup{
+        font-size: 40px;
+    }
+`;
+
+export const ProjectTableItemHederTitle = styled.p`
+    font-size: 14px;
+    color: #575757;
+    padding: 0px;
+    margin: -10px;
+`;
+
+export const ProjectTableContent = styled.ul`
+    list-style: none;
+    font-size: 15px;
+    font-family:'Open Sans';
+    color: #9095aa;
+    padding: 0px;
+    margin: 0px;
+`;
+
+export const ProjectTableList = styled.li`
+    border-bottom: 1px solid #494a5a;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    height: 52px;
+    line-height: 52px;
 `;

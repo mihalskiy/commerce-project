@@ -5,7 +5,7 @@ import ScrollToTop from '../utils/ScrollToTop';
 import Footer from '../components/Footer';
 import {
   ProjectContainer, ProjectSection, ProjectSectionContent, ProjectImage,
-  ProjectSectionHeading, ProjectSectionText, ProjectBackground, ProjectHeader
+  ProjectSectionHeading, ProjectSectionText, ProjectBackground, ProjectPriceTable, ProjectHeader
 } from '../components/Project';
 import { Media } from '../utils/StyleUtils';
 import backgroundSpr from '../assets/spr-background.jpg';
@@ -47,72 +47,14 @@ const ProjectSPR = ({ status }) => (
       />
       <ProjectSection>
         <ProjectSectionContent>
-           <div className='price'>
-              <div id="container">
-                  <div className="whole">
-                      <div className="type">
-                          <p>Простой</p>
-                      </div>
-                      <div className="plan">
-
-                          <div className="header">
-                              <span>$</span>29<sup>99</sup>
-                              <p className="month">per month</p>
-                          </div>
-                          <div className="content">
-                              <ul>
-                                  <li>15 Email Accounts</li>
-                                  <li>100GB Space</li>
-                                  <li>1 Domain Name</li>
-                                  <li>500GB Bandwidth</li>
-                              </ul>
-
-                          </div>
-                      </div>
-                  </div>
-                  <div className="whole">
-                      <div className="type standard">
-                          <p>Стандарт</p>
-                      </div>
-                      <div className="plan">
-
-                          <div className="header">
-                              <span>$</span>49<sup>99</sup>
-                              <p className="month">per month</p>
-                          </div>
-                          <div className="content">
-                              <ul>
-                                  <li>15 Email Accounts</li>
-                                  <li>100GB Space</li>
-                                  <li>1 Domain Name</li>
-                                  <li>500GB Bandwidth</li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-
-                <div className="whole ">
-                    <div className="type ultimate">
-                        <p>Лучший</p>
-                    </div>
-                    <div className="plan">
-
-                        <div className="header">
-                            <span>$</span>79<sup>99</sup>
-                            <p className="month">per month</p>
-                        </div>
-                        <div className="content">
-                            <ul>
-                                <li>15 Email Accounts</li>
-                                <li>100GB Space</li>
-                                <li>1 Domain Name</li>
-                                <li>500GB Bandwidth</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-          </div>
-          </div>
+           <ProjectPriceTable
+               name={'asdfad'}
+               currency={'$'}
+               price={'29'}
+               cent={'99'}
+               title={'sdgfsdg'}
+               fields={roles}
+           />
         </ProjectSectionContent>
       </ProjectSection>
       <ProjectSection>
