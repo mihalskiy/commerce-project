@@ -185,7 +185,7 @@ export default class Home extends Component {
           title="СКОЛЬКО СТОИТ?"
           description="Наши цены вас приятно удивят, оплата поэтапная любым удобным способом"
           buttonText="Посмотреть росценки"
-          buttonLink="https://www.gamestackapp.com"
+          buttonLink="/price"
           imageSrc={[
             `${gamestackLogin} 254w, ${gamestackLoginLarge} 508w`,
             `${gamestackList} 254w, ${gamestackListLarge} 508w`,

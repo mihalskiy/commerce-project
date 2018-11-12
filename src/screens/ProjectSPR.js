@@ -14,15 +14,16 @@ import backgroundSprPlaceholder from '../assets/spr-background-placeholder.jpg';
 import imageSprBuilder from '../assets/spr-builder.png';
 import imageSprBuilderLarge from '../assets/spr-builder-large.png';
 import imageSprBuilderPlaceholder from '../assets/spr-builder-placeholder.png';
+import './price.css';
 
 const prerender = window.location.port === '45678';
 
-const title = 'ПРИМЕРЫ НАШИХ РАБОТ';
-const description = 'I worked as the design lead on a major iteration of Smart Sparrow’s product. We took the platform in a bold new direction, focusing on becoming the best tool for learning designers.';
+const title = 'АКТУАЛЬНЫЕ ЦЕНЫ';
+const description = 'Наши цены — адекватные и умеренные. Все оплаты мы разбиваем на 3 этапа, это удобно и доступно. Вы можете получить очень качественный сайт на основе готового решения, с уникальным дизайном по цене от 13000 грн.';
 const roles = [
-  'Art Direction',
-  'UX and UI Design',
-  'Front End Development',
+  'Simple',
+  'Standard',
+  'Ultimate',
 ];
 
 const ProjectSPR = ({ status }) => (
@@ -41,35 +42,84 @@ const ProjectSPR = ({ status }) => (
       <ProjectHeader
         title={title}
         description={description}
-        url="https://www.smartsparrow.com/aero/"
+        url="/contact"
         roles={roles}
       />
       <ProjectSection>
         <ProjectSectionContent>
-          <ProjectImage entered={!prerender}>
-            <ProgressiveImage
-              srcSet={`${imageSprBuilder} 800w, ${imageSprBuilderLarge} 1440w`}
-              placeholder={imageSprBuilderPlaceholder}
-              sizes={`(max-width: ${Media.mobile}) 500px, (max-width: ${Media.tablet}) 800px, 1000px`}
-            />
-          </ProjectImage>
+           <div className='price'>
+              <div id="container">
+                  <div className="whole">
+                      <div className="type">
+                          <p>Simple</p>
+                      </div>
+                      <div className="plan">
+
+                          <div className="header">
+                              <span>$</span>29<sup>99</sup>
+                              <p className="month">per month</p>
+                          </div>
+                          <div className="content">
+                              <ul>
+                                  <li>15 Email Accounts</li>
+                                  <li>100GB Space</li>
+                                  <li>1 Domain Name</li>
+                                  <li>500GB Bandwidth</li>
+                              </ul>
+
+                          </div>
+                      </div>
+                  </div>
+                  <div className="whole">
+                      <div className="type standard">
+                          <p>Standard</p>
+                      </div>
+                      <div className="plan">
+
+                          <div className="header">
+                              <span>$</span>49<sup>99</sup>
+                              <p className="month">per month</p>
+                          </div>
+                          <div className="content">
+                              <ul>
+                                  <li>15 Email Accounts</li>
+                                  <li>100GB Space</li>
+                                  <li>1 Domain Name</li>
+                                  <li>500GB Bandwidth</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+                <div className="whole ">
+                    <div className="type ultimate">
+                        <p>Ultimate</p>
+                    </div>
+                    <div className="plan">
+
+                        <div className="header">
+                            <span>$</span>79<sup>99</sup>
+                            <p className="month">per month</p>
+                        </div>
+                        <div className="content">
+                            <ul>
+                                <li>15 Email Accounts</li>
+                                <li>100GB Space</li>
+                                <li>1 Domain Name</li>
+                                <li>500GB Bandwidth</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+          </div>
+          </div>
         </ProjectSectionContent>
       </ProjectSection>
       <ProjectSection>
-        <ProjectSectionHeading>Full project coming soon...</ProjectSectionHeading>
+        {/*<ProjectSectionHeading>Full project coming soon...</ProjectSectionHeading>*/}
       </ProjectSection>
-      {false &&
-        <ProjectSection center>
-          <ProjectSectionHeading>The Challenge</ProjectSectionHeading>
-          <ProjectSectionText>
-            The goal of the new product design was to make creating online learning better for
-            teams. As part of my role as lead product designer, I worked to create a consistent
-            design system that allowed us to quickly design and build prototypes for user testing.
-          </ProjectSectionText>
-        </ProjectSection>
-      }
     </ProjectContainer>
-    {false && <Footer />}
+    <Footer />
   </React.Fragment>
 );
 

@@ -123,7 +123,7 @@ const ButtonContainer = styled.button`
 
   ${props => props.secondary && `
     background: none;
-    color: ${props.theme.colorPrimary(1)};
+    
     padding: 0 10px;
     position: relative;
     left: -10px;
@@ -177,7 +177,7 @@ const ButtonText = styled.span`
   `}
 
   ${props => props.secondary ? `
-    color: ${props.theme.colorPrimary(1)};
+    color: ${props.theme.colorWhite(1)};
   `: `
     color: ${props.theme.colorBackground(1)};
   `}

@@ -64,7 +64,7 @@ export const ProjectHeader = ({ title, description, url, roles }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          Visit website
+          Заказать
         </LinkButton>
       </ProjectDetails>
       <ProjectMeta entered={!prerender}>
@@ -382,6 +382,7 @@ export const ProjectSectionHeading = styled.h2`
 export const ProjectSectionText = styled.p`
   font-size: 20px;
   line-height: 1.4;
+  ba
   margin: 0;
   margin-top: 28px;
   color: ${props => props.theme.colorText(0.7)};

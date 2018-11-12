@@ -95,7 +95,7 @@ class App extends Component {
                       <Switch location={location}>
                         <Route exact path="/" render={props => <Home {...props} status={status} />} />
                         <Route path="/contact" render={props => <Contact {...props} status={status} />} />
-                        <Route path="/projects/smart-sparrow" render={props => <ProjectSPR {...props} status={status} />} />
+                        <Route path="/price" render={props => <ProjectSPR {...props} status={status} />} />
                         <Route path="/projects/slice" render={props => <ProjectSlice {...props} status={status} />} />
                         <Route render={props => <NotFound {...props} status={status} />} />
                       </Switch>
