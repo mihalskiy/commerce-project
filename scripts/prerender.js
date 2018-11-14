@@ -5,7 +5,7 @@ run({
     "/projects/smart-sparrow",
     "/projects/slice"
   ],
-  crawl: true,
+  crawl: false,
   skipThirdPartyRequests: true,
   headless: false
 });
