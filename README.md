@@ -1,4 +1,4 @@
-# Personal portfolio
+# commerce-project
 
 ![Site preview](/public/social-image.png)
 
