@@ -1,13 +1,25 @@
 import React from 'react';
 import { hydrate, render } from 'react-dom';
 import App from './app/App';
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga';
+import { logger } from 'redux-logger';
+import AppReducer from './redux/reducers/index.js'
+import rootSaga from './redux/sagas/index';
+
 import registerServiceWorker from './registerServiceWorker';
 
-const rootElement = document.getElementById('root');
-if (rootElement.hasChildNodes()) {
-  hydrate(<App />, rootElement);
-} else {
-  render(<App />, rootElement);
-}
+const sagaMiddleware = createSagaMiddleware();
 
-registerServiceWorker();
+const store = createStore(
+   AppReducer,
+   applyMiddleware(sagaMiddleware, logger),
+);
+sagaMiddleware.run(rootSaga);
+render(
+   <Provider store={store}>
+     <App />
+   </Provider>,
+document.getElementById('root'),
+);

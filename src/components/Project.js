@@ -2,10 +2,17 @@ import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Media, AnimFade, ColorTint } from '../utils/StyleUtils';
 import ProgressiveImage from '../components/ProgressiveImage';
-import { LinkButton } from '../components/Button';
+
 
 const initDelay = 300;
 const prerender = window.location.port === '45678';
+
+
+/* const changeTable = (e) => {
+     const datavalue = e.currentTarget.dataset.value;
+     console.log('eeeee', e)
+     console.log('eeeee', datavalue)
+ };*/
 
 export class ProjectBackground extends React.Component {
   constructor(props) {
@@ -50,30 +57,7 @@ export class ProjectBackground extends React.Component {
   }
 }
 
-export const ProjectHeader = ({ title, description, url, roles }) => (
-  <ProjectHeaderContainer>
-    <ProjectHeaderInner>
-      <ProjectDetails entered={!prerender}>
-        <ProjectTitle>{title}</ProjectTitle>
-        <ProjectDescription>{description}</ProjectDescription>
-        <LinkButton
-          secondary
-          style={{ paddingLeft: '3px' }}
-          icon="chevronRight"
-          href={url}
-          rel="noopener noreferrer"
-        >
-          Заказать
-        </LinkButton>
-      </ProjectDetails>
-      <ProjectMeta entered={!prerender}>
-        {roles && roles.map((role, index) => (
-          <ProjectMetaItem key={`role_${index}`}>{role}</ProjectMetaItem>
-        ))}
-      </ProjectMeta>
-    </ProjectHeaderInner>
-  </ProjectHeaderContainer>
-);
+
 
 export const ProjectPriceTable = ({ name, currency, price, cent, title, fields }) => (
     <ProjectTable>
@@ -209,7 +193,7 @@ export const ProjectBackgroundImage = styled(ProgressiveImage).attrs({
   }
 `;
 
-const ProjectHeaderContainer = styled(ProjectSection.withComponent('header'))`
+export const ProjectHeaderContainer = styled(ProjectSection.withComponent('header'))`
   padding-top: 120px;
   padding-bottom: 0;
 
@@ -223,7 +207,7 @@ const ProjectHeaderContainer = styled(ProjectSection.withComponent('header'))`
   }
 `;
 
-const ProjectHeaderInner = styled.div`
+export const ProjectHeaderInner = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -257,7 +241,7 @@ const AnimFadeSlide = keyframes`
   }
 `;
 
-const ProjectDetails = styled.div`
+export const ProjectDetails = styled.div`
   opacity: 0;
 
   ${props => props.entered && css`
@@ -265,7 +249,7 @@ const ProjectDetails = styled.div`
   `}
 `;
 
-const ProjectTitle = styled.h1`
+export const ProjectTitle = styled.h1`
   margin: 0;
   font-size: 54px;
   font-weight: 500;
@@ -284,7 +268,7 @@ const ProjectTitle = styled.h1`
   }
 `;
 
-const ProjectDescription = styled.p`
+export const ProjectDescription = styled.p`
   font-size: 22px;
   line-height: 1.4;
 
@@ -293,7 +277,7 @@ const ProjectDescription = styled.p`
   }
 `;
 
-const ProjectMeta = styled.ul`
+export const ProjectMeta = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -305,7 +289,7 @@ const ProjectMeta = styled.ul`
   `}
 `;
 
-const ProjectMetaItem = styled.li`
+export const ProjectMetaItem = styled.li`
   padding: 30px 0;
   font-size: 16px;
   font-weight: 400;

@@ -6,8 +6,9 @@ import ScrollToTop from '../utils/ScrollToTop';
 import Footer from '../components/Footer';
 import {
   ProjectContainer, ProjectSection, ProjectSectionContent, ProjectImage,
-  ProjectSectionHeading, ProjectSectionText, ProjectBackground, ProjectHeader
+  ProjectSectionHeading, ProjectSectionText, ProjectBackground
 } from '../components/Project';
+import ProjectHeader from '../components/ProjectHeader'
 import { Media } from '../utils/StyleUtils';
 import sliceBackground from '../assets/slice-background.jpg';
 import sliceBackgroundLarge from '../assets/slice-background-large.jpg';

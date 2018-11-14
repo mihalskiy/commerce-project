@@ -1,21 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import ProgressiveImage from '../components/ProgressiveImage';
 import ScrollToTop from '../utils/ScrollToTop';
 import Footer from '../components/Footer';
 import {
-  ProjectContainer, ProjectSection, ProjectSectionContent, ProjectImage,
-  ProjectSectionHeading, ProjectSectionText, ProjectBackground, ProjectPriceTable, ProjectHeader
-} from '../components/Project';
-import { Media } from '../utils/StyleUtils';
+  ProjectContainer, ProjectSection, ProjectSectionContent, ProjectBackground, ProjectPriceTable} from '../components/Project';
+import ProjectHeader from '../components/ProjectHeader'
 import backgroundSpr from '../assets/spr-background.jpg';
 import backgroundSprLarge from '../assets/spr-background-large.jpg';
 import backgroundSprPlaceholder from '../assets/spr-background-placeholder.jpg';
-import imageSprBuilder from '../assets/spr-builder.png';
-import imageSprBuilderLarge from '../assets/spr-builder-large.png';
-import imageSprBuilderPlaceholder from '../assets/spr-builder-placeholder.png';
-import './price.css';
-
 const prerender = window.location.port === '45678';
 
 const title = 'АКТУАЛЬНЫЕ ЦЕНЫ';
