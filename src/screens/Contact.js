@@ -4,7 +4,7 @@ import { TransitionGroup, Transition } from 'react-transition-group';
 import { Helmet } from 'react-helmet';
 import Input from '../components/Input';
 import DecoderText from '../components/DecoderText';
-import Button, { RouterButton } from '../components/Button';
+import { RouterButton } from '../components/Button';
 import { Media, AnimFade } from '../utils/StyleUtils';
 //import Firebase from '../utils/Firebase';
 import ScrollToTop from '../utils/ScrollToTop';
@@ -100,7 +100,7 @@ export default class Contact extends PureComponent {
                     required
                     multiline
                   />
-                  <ContactButton
+                 {/* <ContactButton
                     disabled={sending}
                     sending={sending}
                     loading={sending}
@@ -110,7 +110,7 @@ export default class Contact extends PureComponent {
                     type="submit"
                   >
                     Send Message
-                  </ContactButton>
+                  </ContactButton>*/}
                 </ContactForm>
               )}
             </Transition>
@@ -275,7 +275,7 @@ const ContactInput = styled(Input)`
   `}
 `;
 
-const ContactButton = styled(Button)`
+/*const ContactButton = styled(Button)`
   margin-top: 20px;
   transition-property: transform, opacity;
   transition-timing-function: ${props => props.theme.curveFastoutSlowin};
@@ -315,7 +315,7 @@ const ContactButton = styled(Button)`
     transform: translate3d(0, -40px, 0);
     opacity: 0;
   `}
-`;
+`;*/
 
 const ContactComplete = styled.div`
   display: flex;

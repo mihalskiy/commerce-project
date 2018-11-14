@@ -50,6 +50,9 @@ const GET_TABLE = 'GET_TABLE';
 
 export function getTable(tableName) {
 
+
+    console.log('eeeee', tableName)
+
     return {
         type: GET_TABLE,
         payload: {tableName}
