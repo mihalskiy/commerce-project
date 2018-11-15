@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { Helmet } from 'react-helmet';
 import ScrollToTop from '../utils/ScrollToTop';
 import Footer from '../components/Footer';
@@ -10,6 +11,7 @@ import backgroundSprLarge from '../assets/spr-background-large.jpg';
 import backgroundSprPlaceholder from '../assets/spr-background-placeholder.jpg';
 const prerender = window.location.port === '45678';
 
+
 const title = 'АКТУАЛЬНЫЕ ЦЕНЫ';
 const description = 'Наши цены — адекватные и умеренные. Все оплаты мы разбиваем на 3 этапа, это удобно и доступно. Вы можете получить очень качественный сайт на основе готового решения, с уникальным дизайном по цене от 13000 грн.';
 const roles = [
@@ -18,7 +20,7 @@ const roles = [
   'Лучший',
 ];
 
-const ProjectSPR = ({ status }) => (
+let ProjectSPR = ({ status, table = {} }) => (
   <React.Fragment>
     <ScrollToTop status={status} />
     <Helmet>
@@ -40,10 +42,10 @@ const ProjectSPR = ({ status }) => (
       <ProjectSection>
         <ProjectSectionContent>
            <ProjectPriceTable
-               name={'asdfad'}
-               currency={'$'}
-               price={'29'}
-               cent={'99'}
+               name={table.name|| 'выберете тариф'}
+               currency={table.currency}
+               price={table.price}
+               cent={table.cent}
                title={'sdgfsdg'}
                fields={roles}
            />
@@ -56,5 +58,14 @@ const ProjectSPR = ({ status }) => (
     <Footer />
   </React.Fragment>
 );
+
+const mapStateToProps = function (state) {
+    return {
+        table: state,
+    }
+}
+
+ProjectSPR = connect(mapStateToProps,null)(ProjectSPR)
+
 
 export default ProjectSPR;

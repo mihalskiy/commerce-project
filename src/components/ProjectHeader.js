@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 const prerender = window.location.port === '45678';
 
 const mapDispatchToProps = {
-    getTable: getTable,
+    getTable: getTable
 };
 
 let ProjectHeader = ({ title, description, url, roles, getTable }) => (

@@ -5,8 +5,8 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga';
 import { logger } from 'redux-logger';
-import AppReducer from './redux/reducers/index.js'
-import rootSaga from './redux/sagas/index';
+import AppReducer from './redux/reducers/reducer.js'
+import rootSaga from './redux/sagas/saga';
 
 import registerServiceWorker from './registerServiceWorker';
 

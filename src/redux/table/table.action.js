@@ -47,15 +47,22 @@ export function tickClock (isServer) {
 */
 
 const GET_TABLE = 'GET_TABLE';
+const GET_TABLE_SUCCESS = 'GET_TABLE_SUCCESS';
 
 export function getTable(tableName) {
-
-
-    console.log('eeeee', tableName)
-
     return {
         type: GET_TABLE,
-        payload: {tableName}
+        payload: {
+            tableName: tableName.currentTarget.dataset.value
+        }
     }
 
+}
+
+export function getTableSuccess(payload) {
+    console.log('payload', payload)
+    return {
+        type: GET_TABLE_SUCCESS,
+        payload
+    }
 }
