@@ -9,12 +9,12 @@ import {
 import ProjectHeader from '../components/ProjectHeader'
 import backgroundSpr from '../assets/sky.jpg';
 import backgroundSprLarge from '../assets/sky.jpg';
-import backgroundSprPlaceholder from '../assets/sky.jpg';
+import backgroundSprPlaceholder from '../assets/project-large.png';
 const prerender = window.location.port === '45678';
 
 
-const title = 'АКТУАЛЬНЫЕ ЦЕНЫ';
-const description = 'Наши цены — адекватные и умеренные. Все оплаты мы разбиваем на 3 этапа, это удобно и доступно. Вы можете получить очень качественный сайт на основе готового решения, с уникальным дизайном по цене от 13000 грн.';
+const title = 'ПРИМЕРЫ НАШИХ РАБОТ';
+const description = 'Лучше всего о нашем качестве и надежности расскажет наше портфолио. Для каждого Заказчика мы стараемся подобрать оптимальную схему взаимоотношений, одинаково внимательно относясь как к крупным клиентам, так и к небольшим заказам. Наш Заказчик обращается к нам при следующей регистрации или перерегистрации, и это - наш главный показатель качества и конкурентноспособности.';
 const roles = [
     'Простой',
     'Стандарт',
