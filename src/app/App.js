@@ -15,6 +15,7 @@ import GothamMedium from '../fonts/gotham-medium.woff2';
 const Home = asyncComponent(props => import("../screens/Home"));
 const Contact = asyncComponent(props => import("../screens/Contact"));
 const ProjectSPR = asyncComponent(props => import("../screens/ProjectSPR"));
+const ProjectPortfolio = asyncComponent(props => import("../screens/ProjectPortfolio"));
 const ProjectSlice = asyncComponent(props => import("../screens/ProjectSlice"));
 const NotFound = asyncComponent(props => import("../screens/NotFound"));
 
@@ -96,6 +97,7 @@ class App extends Component {
                         <Route exact path="/" render={props => <Home {...props} status={status} />} />
                         <Route path="/contact" render={props => <Contact {...props} status={status} />} />
                         <Route path="/price" render={props => <ProjectSPR {...props} status={status} />} />
+                        <Route path="/portfolio" render={props => <ProjectPortfolio {...props} status={status} />} />
                         <Route path="/projects/slice" render={props => <ProjectSlice {...props} status={status} />} />
                         <Route render={props => <NotFound {...props} status={status} />} />
                       </Switch>

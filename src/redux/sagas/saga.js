@@ -4,21 +4,21 @@ import {getTableSuccess} from '../table/table.action'
 const arr = [
     {
         name: 'Простой',
-        price: 'price1',
-        cent: 'cent1',
-        currency: 'currency1',
+        price: '29',
+        cent: '99',
+        currency: '$',
     },
     {
         name: 'Стандарт',
-        price: 'price2',
-        cent: 'cent2',
-        currency: 'currency2',
+        price: '99',
+        cent: '59',
+        currency: '$',
     },
     {
         name: 'Лучший',
-        price: 'price3',
-        cent: 'cent3',
-        currency: 'currency3',
+        price: '15',
+        cent: '45',
+        currency: '$',
     }
 ];
 function* getTableSaga({payload: {tableName}}) {

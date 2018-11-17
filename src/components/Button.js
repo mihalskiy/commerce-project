@@ -5,7 +5,6 @@ import Loader from '../components/Loader';
 import Icon from '../utils/Icon';
 import Theme from '../utils/Theme';
 import { ColorTint } from '../utils/StyleUtils';
-import ProjectHeader from "./ProjectHeader";
 
 const ButtonContent = ({ iconRight, icon, children, secondary, loading }) => (
   <React.Fragment>
