@@ -1,6 +1,5 @@
 import {LinkButton} from "../components/Button";
 import React from "react";
-import ProjectCircle from './ProjectCircle';
 import {ProjectHeaderInner, ProjectDetails, ProjectTitle,ProjectMeta, ProjectMetaItem, ProjectDescription, ProjectHeaderContainer} from "../components/Project";
 import { getTable } from '../redux/table/table.action';
 import { Media, AnimFade, ColorTint } from '../utils/StyleUtils';
