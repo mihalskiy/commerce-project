@@ -17,10 +17,46 @@ const prerender = window.location.port === '45678';
 
 const title = 'ПРИМЕРЫ НАШИХ РАБОТ';
 const description = 'Лучше всего о нашем качестве и надежности расскажет наше портфолио. Для каждого Заказчика мы стараемся подобрать оптимальную схему взаимоотношений, одинаково внимательно относясь как к крупным клиентам, так и к небольшим заказам. Наш Заказчик обращается к нам при следующей регистрации или перерегистрации, и это - наш главный показатель качества и конкурентноспособности.';
-const roles = [
-    'Простой',
-    'Стандарт',
-    'Лучший',
+const portfolioList = [
+    {
+        bgColor: "https://picsum.photos/400/180",
+        title: 'first title',
+        description: 'first description',
+        categoryList: [
+            {
+                id: 1,
+                name: 'ba bla',
+                progress: '84'
+            },
+            {
+                id: 1,
+                name: 'ba bla',
+                progress: '48'
+            },
+            {
+                id: 1,
+                name: 'ba bla',
+                progress: '15'
+            },
+            {
+                id: 1,
+                name: 'ba bla',
+                progress: '55'
+            }
+        ]
+    },
+    {
+        bgColor: "https://picsum.photos/1020/720",
+        title: 'first title',
+        description: 'first description',
+        categoryList: [
+            {
+                id: 1,
+                name: 'ba bla',
+                progress: '84'
+            }
+        ]
+    }
 ];
 
 let ProjectPortfolio = ({ status, table = {} }) => (
@@ -45,12 +81,17 @@ let ProjectPortfolio = ({ status, table = {} }) => (
             <ProjectSection>
                 <ProjectSectionContent>
                     <ProjectSectionPortfolio>
-                        <PortfolioList />
-                        <PortfolioList />
-                        <PortfolioList />
-                        <PortfolioList />
-                        <PortfolioList />
-                        <PortfolioList />
+                        {portfolioList && portfolioList.map((list, index) => (
+                            <PortfolioList
+                                bg={list.bgColor}
+                                title={list.title}
+                                description={list.description}
+                                list={list.categoryList}
+                                key={`role_${index}`}
+                            />
+                        ))
+                        }
+
                     </ProjectSectionPortfolio>
                 </ProjectSectionContent>
 

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import { Media, AnimFade, ColorTint } from '../utils/StyleUtils';
-
+import {ProjectMetaItem} from "../components/Project";
 
 
 const theme = {
@@ -9,36 +8,33 @@ const theme = {
     progress: "25%"
 }
 
-let PortfolioList = ({}) =>(
-  <PortfolioListContent theme={{main: 'https://picsum.photos/1080/720'}}>
+let PortfolioList = ({bg, title, description, list}) =>(
+  <PortfolioListContent theme={{main: bg}}>
       <PortfolioListItem>
 
           <PortfolioListItemAlign>
-              <PortfolioListTitle>Интернет магазин Водка</PortfolioListTitle>
-              <PortfolioListSubTitle> Лендинг с использованием рект ангуляр нода и т.д</PortfolioListSubTitle>
+              <PortfolioListTitle>{title}</PortfolioListTitle>
+              <PortfolioListSubTitle> {description} </PortfolioListSubTitle>
           </PortfolioListItemAlign>
           <PortfolioListItemAlign>
-              <PortfolioTable />
-              <PortfolioTable />
-              <PortfolioTable />
-              <PortfolioTable />
+              {list && list.map((list, index) => (
+                  <PortfolioTable number={list.id} nume={list.name} progress={list.progress} key={`role_${index}`}/>
+              ))}
           </PortfolioListItemAlign>
-
       </PortfolioListItem>
-
   </PortfolioListContent>
 
 );
 
-let PortfolioTable = () => (
+let PortfolioTable = ({number, name, progress}) => (
         <PortfolioTableContent>
-            <PortfolioTableNum>01</PortfolioTableNum>
-            <PortfolioTableTitle>Pisdet Scuchno</PortfolioTableTitle>
+            <PortfolioTableNum>{number}</PortfolioTableNum>
+            <PortfolioTableTitle>{name}</PortfolioTableTitle>
             <PortfolioTableProgressAlign>
                 <PortfolioTableProgress>
-                    <PortfolioTableProgressItem theme={{progress: '85%'}}></PortfolioTableProgressItem>
+                    <PortfolioTableProgressItem theme={{progress: progress + '%'}} />
                 </PortfolioTableProgress>
-                <PortfolioTableNum>85%</PortfolioTableNum>
+                <PortfolioTableNum>{progress}%</PortfolioTableNum>
             </PortfolioTableProgressAlign>
 
         </PortfolioTableContent>
@@ -102,7 +98,7 @@ export const PortfolioListContent = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 100%;
+  min-height: 300px;
   margin: 40px 15px 15px 0;
 `;
 
@@ -114,7 +110,7 @@ export const PortfolioListItem = styled.div`
   background: #2b2937;
   background: rgba(0,0,0,0.5);
   border-radius: 25px;
-  justify-content: center;
+  justify-content: space-between;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -126,9 +122,7 @@ export const PortfolioListTitle = styled.h1`
 `;
 
 export const PortfolioListSubTitle = styled.span`
-
-font-size: 12px;
-  
+  font-size: 12px;
 `;
 
 
