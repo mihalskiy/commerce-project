@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet';
 import ScrollToTop from '../utils/ScrollToTop';
 import Footer from '../components/Footer';
 import NavPortfolio from '../screens/NavPortfolio';
+import PortfolioList from './PortfolioList';
+import styled from 'styled-components';
 import {
     ProjectContainer, ProjectSection, ProjectSectionContent, ProjectBackground, ProjectPriceTable} from '../components/Project';
 import ProjectHeader from '../components/ProjectHeader'
@@ -42,15 +44,16 @@ let ProjectPortfolio = ({ status, table = {} }) => (
             />
             <ProjectSection>
                 <ProjectSectionContent>
-                    <ProjectPriceTable
-                        name={table.name|| 'выберете тариф'}
-                        currency={table.currency}
-                        price={table.price}
-                        cent={table.cent}
-                        title={'sdgfsdg'}
-                        fields={roles}
-                    />
+                    <ProjectSectionPortfolio>
+                        <PortfolioList />
+                        <PortfolioList />
+                        <PortfolioList />
+                        <PortfolioList />
+                        <PortfolioList />
+                        <PortfolioList />
+                    </ProjectSectionPortfolio>
                 </ProjectSectionContent>
+
             </ProjectSection>
             <ProjectSection>
                 {/*<ProjectSectionHeading>Full project coming soon...</ProjectSectionHeading>*/}
@@ -65,6 +68,15 @@ const mapStateToProps = function (state) {
         table: state,
     }
 }
+
+
+export const ProjectSectionPortfolio = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+`;
 
 ProjectPortfolio = connect(mapStateToProps,null)(ProjectPortfolio)
 

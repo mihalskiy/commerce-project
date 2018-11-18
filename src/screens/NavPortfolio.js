@@ -16,7 +16,7 @@ const mapDispatchToProps = {
     getTable: getTable
 };
 
-let NavPortfolio = ({ title, description, url, src, getTable }) => (
+let NavPortfolio = ({ title, description, url, src }) => (
     <ProjectHeaderContainer>
 
         <ProjectHeaderNav>
