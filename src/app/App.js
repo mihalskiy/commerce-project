@@ -66,7 +66,6 @@ class App extends Component {
 
   render() {
     const { menuOpen } = this.state;
-
     return (
       <ThemeProvider theme={Theme}>
         <BrowserRouter>

@@ -1,68 +1,18 @@
-export const tableAction = {
-    CHANGE: 'CHANGE'
-}
+import Immutable from 'seamless-immutable';
+import { createAction } from 'redux-actions';
 
-/*
-export function change (error) {
-    return {
-        type: actionTypes.CHANGE,
-        error
-    }
-}
+const GET_TABLE_PENDING = 'table/GET_TABLE_PENDING';
+const GET_TABLE_SUCCESS = 'table/GET_TABLE_SUCCESS';
+const GET_TABLE = 'table/GET_TABLE';
 
-export function increment () {
-    return {type: actionTypes.CHANGE}
-}
+const actionTypes = Immutable({
+    GET_TABLE_PENDING,
+    GET_TABLE_SUCCESS,
+    GET_TABLE,
+});
 
-export function decrement () {
-    return {type: actionTypes.CHANGE}
-}
+export default actionTypes;
 
-export function reset () {
-    return {type: actionTypes.RESET}
-}
-
-export function loadData () {
-    return {type: actionTypes.CHANGE}
-}
-
-export function loadDataSuccess (data) {
-    return {
-        type: actionTypes.CHANGE,
-        data
-    }
-}
-
-export function startClock () {
-    return {type: actionTypes.START_CLOCK}
-}
-
-export function tickClock (isServer) {
-    return {
-        type: actionTypes.TICK_CLOCK,
-        light: !isServer,
-        ts: Date.now()
-    }
-}
-*/
-
-const GET_TABLE = 'GET_TABLE';
-const GET_TABLE_SUCCESS = 'GET_TABLE_SUCCESS';
-
-export function getTable(tableName) {
-    return {
-        type: GET_TABLE,
-        payload: {
-            tableName: tableName.currentTarget.dataset.value
-        }
-    }
-
-}
-
-export function getTableSuccess(payload) {
-    console.log('payload', payload)
-    return {
-        type: GET_TABLE_SUCCESS,
-        payload
-    }
-}
+export const getTablePending = createAction(actionTypes.GET_TABLE_PENDING);
+export const getTableSuccess = createAction(actionTypes.GET_TABLE_SUCCESS);
+export const getTable = createAction(actionTypes.GET_TABLE);

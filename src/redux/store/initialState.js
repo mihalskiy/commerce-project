@@ -1,3 +1,7 @@
-const initialState = {};
+const initialState = {
+    table: {
+        loading: false
+    }
+};
 
 export default initialState;
