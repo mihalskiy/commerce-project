@@ -21,7 +21,7 @@ class ProjectHeader extends Component {
     }
 
     handleClick(e) {
-        this.getTable(e.currentTarget.dataset.value);
+        this.props.getTable({tableName: e.currentTarget.dataset.value});
     }
 
 

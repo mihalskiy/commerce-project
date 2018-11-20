@@ -16,8 +16,8 @@ const middlewares = [sagaMiddleware];
 
 const getDevEnhancers = () => {
     const { composeWithDevTools } = require('redux-devtools-extension');
-    // const { logger } = require('redux-logger');
-    // middlewares.push(logger);
+     const { logger } = require('redux-logger');
+     middlewares.push(logger);
 
     return composeWithDevTools(applyMiddleware(...middlewares));
 };
