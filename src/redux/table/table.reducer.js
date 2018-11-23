@@ -11,15 +11,16 @@ function reducer(state = INITIAL_STATE, action = {}) {
         loading,
     } = payload;
     switch (type) {
-        case TableAction.GET_TABLE_PENDING:
+        case TableAction.GET_TABLE_PENDING :
             return state.merge({
                 loading: true,
             });
-        case TableAction.GET_TABLE_SUCCESS:
+        case TableAction.GET_TABLE_SUCCESS :
             return state.merge({
                 loading: false,
+                ...payload
             });
-        case TableAction.GET_TABLE:
+        case TableAction.GET_TABLE :
             return state.merge({
                 loading: false,
                 ...payload

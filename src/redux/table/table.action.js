@@ -1,18 +1,35 @@
-import Immutable from 'seamless-immutable';
-import { createAction } from 'redux-actions';
+//import { createAction } from 'redux-actions';
 
 const GET_TABLE_PENDING = 'table/GET_TABLE_PENDING';
 const GET_TABLE_SUCCESS = 'table/GET_TABLE_SUCCESS';
 const GET_TABLE = 'table/GET_TABLE';
 
-const actionTypes = Immutable({
+const actionTypes = {
     GET_TABLE_PENDING,
     GET_TABLE_SUCCESS,
     GET_TABLE,
-});
+};
 
 export default actionTypes;
 
-export const getTablePending = createAction(actionTypes.GET_TABLE_PENDING);
-export const getTableSuccess = createAction(actionTypes.GET_TABLE_SUCCESS);
-export const getTable = createAction(actionTypes.GET_TABLE);
+export const getTablePending = () => {
+    return { type: 'GET_TABLE_PENDING' }
+};
+
+export const  getTable = (tableName) => {
+    return {
+        type: GET_TABLE,
+        payload: {
+            tableName: tableName
+        }
+    }
+}
+
+export const getTableSuccess = (payload) => {
+    return {
+        type: GET_TABLE_SUCCESS,
+        payload: {
+            priceInfo: payload
+        }
+    }
+};

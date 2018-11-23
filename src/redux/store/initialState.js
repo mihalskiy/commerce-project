@@ -1,6 +1,8 @@
 const initialState = {
     table: {
-        loading: false
+        loading: false,
+        url: '',
+        error: false,
     }
 };
 

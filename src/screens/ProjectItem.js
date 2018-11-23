@@ -41,7 +41,6 @@ const ProjectItem = ({
                   {buttonLink ?
                     <LinkButton
                       href={buttonLink}
-                      target="_blank"
                       rel="noopener noreferrer"
                       iconRight="arrowRight"
                     >

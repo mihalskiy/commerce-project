@@ -59,14 +59,14 @@ export class ProjectBackground extends React.Component {
 
 
 
-export const ProjectPriceTable = ({ name, currency, price, cent, title, fields }) => (
+export const ProjectPriceTable = ({ name= {}, currency = {}, price = {}, cent = {}, title = {}, fields }) => (
     <ProjectTable>
             <ProjectDetails entered={!prerender}>
-                <ProjectTableName>{name}</ProjectTableName>
+                <ProjectTableName>{name.name}</ProjectTableName>
                 <ProjectTableItem>
                     <ProjectTableItemHeder>
-                        <span>{currency}</span>{price}<sup>{cent}</sup>
-                        <ProjectTableItemHederTitle>{title}</ProjectTableItemHederTitle>
+                        <span>{currency.currency}</span>{price.price}<sup>{cent.cent}</sup>
+                        <ProjectTableItemHederTitle>{title.title}</ProjectTableItemHederTitle>
                     </ProjectTableItemHeder>
                     <div>
                         <ProjectTableContent>
@@ -283,7 +283,11 @@ export const ProjectMeta = styled.ul`
   padding: 0;
   margin-top: 10px;
   opacity: 0;
-
+  
+    .active {
+        background: rgba(0,229,255,0.4);
+      }
+      
   ${props => props.entered && css`
     animation: ${AnimFadeSlide} 1.4s ${props.theme.curveFastoutSlowin} ${initDelay + 200}ms forwards;
   `}
@@ -403,10 +407,7 @@ export const ProjectTable = styled.div`
     align-items: center;
     flex-direction: column;
     width: 300px;
-    border-radius: 5px 5px 0px 0px;
-    background-color: ${props => props.theme.colorTable('#eac80d')};
-    height: 62px;
-    border-bottom: 3px solid #bfa30c;
+    border-radius: 5px 5px 0 0;
 `;
 export const ProjectTableName = styled.span`
   font-family:'Open Sans';
@@ -416,6 +417,7 @@ export const ProjectTableName = styled.span`
   font-size: 29px;
   text-transform: uppercase;
   color: white;
+  background-color: ${props => props.theme.colorTable('#eac80d')};
   text-align: center;
   padding: 10px 0;
 `;
