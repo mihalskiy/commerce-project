@@ -1,9 +1,11 @@
 const Order = require('../models').Orders;
-//const Test = require('../models').Test;
+const senderMail = require('../mail/mail.service').mail;
+
 
 module.exports = {
   create(req, res) {
-    return Order
+      senderMail(req.body.email, req.body.message);
+      return Order
       .create({
         name: req.body.name,
         phone: req.body.phone,

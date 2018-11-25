@@ -1,9 +1,10 @@
 const ordersController = require('../controllers').orders;
 const orderItemsController = require('../controllers').orderItems;
+require('dotenv').config();
 
 module.exports = (app) => {
   app.get('/', (req, res) => res.status(200).send({
-    message: 'Welcome to the Todos API!',
+    message: process.env.ROOT_USER + '- test',
   }));
 
   app.post('/orders', ordersController.create);
