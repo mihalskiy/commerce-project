@@ -1,7 +1,7 @@
-const todos = require('./todos');
-const todoItems = require('./todoitems');
+const orders = require('./orders');
+const orderItems = require('./orderItems');
 
 module.exports = {
-  todos,
-  todoItems,
+  orders,
+  orderItems,
 };

@@ -90,7 +90,7 @@ class App extends Component {
                   {status => (
                     <MainContent status={status} id="MainContent" role="main">
                       <Helmet>
-                        <link rel="canonical" href={`https://hamishw.com${location.pathname}`} />
+                        <link rel="canonical" href={`${location.pathname}`} />
                       </Helmet>
                       <Switch location={location}>
                         <Route exact path="/" render={props => <Home {...props} status={status} />} />

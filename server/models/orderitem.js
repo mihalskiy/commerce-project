@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const TodoItem = sequelize.define('TodoItem', {
+  const OrderItem = sequelize.define('OrderItem', {
     content: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: false,
     }
   });
-  TodoItem.associate = (models) => {
-    TodoItem.belongsTo(models.Todo, {
-      foreignKey: 'todoId',
+    OrderItem.associate = (models) => {
+        OrderItem.belongsTo(models.User, {
+      foreignKey: 'userId',
       onDelete: 'CASCADE',
     });
   };
-  return TodoItem;
+  return OrderItem;
 };

@@ -1,34 +1,28 @@
-const Todo = require('../models').Todo;
-const TodoItem = require('../models').TodoItem;
+const Order = require('../models').Orders;
+//const Test = require('../models').Test;
 
 module.exports = {
   create(req, res) {
-    return Todo
+    return Order
       .create({
-        title: req.body.title,
+        name: req.body.name,
+        phone: req.body.phone,
+        email: req.body.email,
+        message: req.body.message
       })
-      .then((todo) => res.status(201).send(todo))
+      .then((order) => res.status(201).send(order))
       .catch((error) => res.status(400).send(error));
   },
 
   list(req, res) {
-    return Todo
-      .findAll({
-        include: [{
-          model: TodoItem,
-          as: 'todoItems',
-        }],
-        order: [
-          ['createdAt', 'DESC'],
-          [{ model: TodoItem, as: 'todoItems' }, 'createdAt', 'ASC'],
-        ],
-      })
-      .then((todos) => res.status(200).send(todos))
+    return Order
+      .findAll({})
+      .then((orders) => res.status(200).send(orders))
       .catch((error) => res.status(400).send(error));
   },
 
   retrieve(req, res) {
-    return Todo
+    return Order
       .findById(req.params.todoId, {
         include: [{
           model: TodoItem,

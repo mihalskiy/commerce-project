@@ -3,6 +3,9 @@ const initialState = {
         loading: false,
         url: '',
         error: false,
+    },
+    order: {
+        loading: false
     }
 };
 

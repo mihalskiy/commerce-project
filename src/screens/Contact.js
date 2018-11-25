@@ -4,36 +4,54 @@ import { TransitionGroup, Transition } from 'react-transition-group';
 import { Helmet } from 'react-helmet';
 import Input from '../components/Input';
 import DecoderText from '../components/DecoderText';
-import { RouterButton } from '../components/Button';
+import { RouterButton, ProjectHeaderButton } from '../components/Button';
 import { Media, AnimFade } from '../utils/StyleUtils';
-//import Firebase from '../utils/Firebase';
 import ScrollToTop from '../utils/ScrollToTop';
+import { getOrder } from '../redux/order/order.action';
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+
 
 const prerender = window.location.port === '45678';
 const initDelay = 300;
 
-export default class Contact extends PureComponent {
-  state = {
-    emailValue: '',
-    messageValue: '',
-    sending: false,
-    complete: false,
-  }
+const mapDispatchToProps = dispatch => bindActionCreators({
+    getOrder
 
-  updateEmail = event => {
-    this.setState({ emailValue: event.target.value });
-  }
+}, dispatch);
 
-  updateMessage = event => {
-    this.setState({ messageValue: event.target.value });
-  }
+class Contact extends PureComponent {
 
-  onSubmit = event => {
-    const { emailValue, messageValue, sending } = this.state;
-    event.preventDefault();
+      constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            message: '',
+            sending: false,
+            complete: false
+        };
 
-    if (!sending) {
-      this.setState({ sending: true });
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleClick (event) {
+
+        console.log('Your favorite flavor is: ' + this.state);
+        this.props.getOrder({
+            email: this.state.email,
+            message: this.state.message
+        });
+        event.preventDefault();
 
       /*Firebase.database().ref('messages').push({
         email: emailValue,
@@ -45,11 +63,12 @@ export default class Contact extends PureComponent {
         alert(error);
       });*/
     }
-  }
 
   render() {
     const { status } = this.props;
-    const { emailValue, messageValue, sending, complete } = this.state;
+    const { email, message, sending, complete } = this.state;
+
+    console.log('this.state', this.state)
 
     return (
       <ContactWrapper>
@@ -62,10 +81,10 @@ export default class Contact extends PureComponent {
           />
         </Helmet>
         <TransitionGroup component={React.Fragment}>
-          {!complete &&
+          {/*{!complete &&*/}
             <Transition appear timeout={1600} mountOnEnter unmountOnExit>
               {status => (
-                <ContactForm method="post" onSubmit={this.onSubmit} role="form">
+                <ContactForm onSubmit={this.handleClick} role="form">
                   <ContactTitle status={status} delay={50}>
                     <DecoderText
                       text="Say hello"
@@ -77,31 +96,30 @@ export default class Contact extends PureComponent {
                   <ContactInput
                     status={status}
                     delay={200}
-                    onChange={this.updateEmail}
+                    onChange={this.handleInputChange}
                     autoComplete="email"
                     label="Your Email"
                     id="email"
                     type="email"
-                    hasValue={!!emailValue}
-                    value={emailValue}
+                    hasValue={!!email}
+                    value={email}
                     maxLength={320}
                     required
                   />
                   <ContactInput
                     status={status}
                     delay={300}
-                    onChange={this.updateMessage}
+                    onChange={this.handleInputChange}
                     autoComplete="off"
                     label="Message"
                     id="message"
-                    hasValue={!!messageValue}
-                    value={messageValue}
+                    hasValue={!!message}
+                    value={message}
                     maxLength={2000}
                     required
                     multiline
                   />
-                 {/* <ContactButton
-                    disabled={sending}
+                  <ContactButton
                     sending={sending}
                     loading={sending}
                     status={status}
@@ -110,11 +128,11 @@ export default class Contact extends PureComponent {
                     type="submit"
                   >
                     Send Message
-                  </ContactButton>*/}
+                  </ContactButton>
                 </ContactForm>
               )}
             </Transition>
-          }
+         {/* }
           {complete &&
             <Transition appear timeout={0} mountOnEnter unmountOnExit>
               {status => (
@@ -140,12 +158,14 @@ export default class Contact extends PureComponent {
                 </ContactComplete>
               )}
             </Transition>
-          }
+          }*/}
         </TransitionGroup>
       </ContactWrapper>
     );
   }
 }
+
+export default connect(null, mapDispatchToProps)(Contact);
 
 const ContactWrapper = styled.section`
   display: flex;
@@ -172,6 +192,10 @@ const ContactForm = styled.form`
   max-width: 440px;
   width: 100%;
   padding: 40px 20px;
+  
+  input:-webkit-autofill {
+    background-color: transparent !important;
+  }
 
   @media (max-width: ${Media.mobile}) {
     padding: 120px 20px 40px;
@@ -275,7 +299,7 @@ const ContactInput = styled(Input)`
   `}
 `;
 
-/*const ContactButton = styled(Button)`
+const ContactButton = styled(ProjectHeaderButton)`
   margin-top: 20px;
   transition-property: transform, opacity;
   transition-timing-function: ${props => props.theme.curveFastoutSlowin};
@@ -315,7 +339,7 @@ const ContactInput = styled(Input)`
     transform: translate3d(0, -40px, 0);
     opacity: 0;
   `}
-`;*/
+`;
 
 const ContactComplete = styled.div`
   display: flex;

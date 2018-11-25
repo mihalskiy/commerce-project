@@ -1,7 +1,7 @@
 {
   "name": "portfolio-2018",
   "version": "0.1.0",
-  "homepage": "https://hamishw.com",
+  "homepage": "https://localhost.com",
   "private": true,
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -16,8 +16,17 @@
   },
   "dependencies": {
     "autosize": "^4.0.2",
+    "axios": "^0.18.0",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.5",
     "es6-tween": "^5.3.1",
+    "express": "^4.14.0",
     "ios-inner-height": "^1.1.0",
+    "morgan": "^1.7.0",
+    "nodemailer": "^4.7.0",
+    "nodemon": "^1.11.0",
+    "pg": "^6.2.4",
+    "pg-hstore": "^2.3.2",
     "react": "^16.6.1",
     "react-circle": "^1.1.1",
     "react-dom": "^16.6.1",
@@ -31,14 +40,8 @@
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.16.2",
     "seamless-immutable": "^7.1.4",
+    "sequelize": "^4.41.2",
     "styled-components": "^4.0.3",
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "morgan": "^1.7.0",
-    "pg": "^6.2.4",
-    "pg-hstore": "^2.3.2",
-    "sequelize": "^4.1.0",
-    "nodemon": "^1.11.0",
     "three": "^0.95.0"
   },
   "scripts": {

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import TaleReducer from '../table/table.reducer';
+import OrderReducer from '../table/table.reducer';
 // TODO: define new reducers here
 
 export default () => combineReducers({
-    table: TaleReducer
+    table: TaleReducer,
+    order: OrderReducer,
     // TODO: include new reducers here
 });

@@ -21,7 +21,7 @@ const HeaderIcons = ({ toggleMenu }) => (
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Dribbble"
-      href="https://dribbble.com/hamishw"
+      href="/"
     >
       <HeaderNavIcon icon="dribbble" />
     </HeaderNavIconLink>

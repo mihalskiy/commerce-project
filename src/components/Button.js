@@ -209,4 +209,4 @@ const ButtonIcon = styled(Icon)`
   `}
 `;
 
-export { LinkButton, RouterButton };
+export { LinkButton, RouterButton, ProjectHeaderButton };

@@ -1,3 +1,4 @@
+/*
 const TodoItem = require('../models').TodoItem;
 
 module.exports = {
@@ -60,3 +61,4 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 };
+*/
