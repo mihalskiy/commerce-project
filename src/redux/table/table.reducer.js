@@ -7,9 +7,6 @@ export const INITIAL_STATE = Immutable(initialState.table);
 
 function reducer(state = INITIAL_STATE, action = {}) {
     const { type = '', payload = {} } = action;
-    const {
-        loading,
-    } = payload;
     switch (type) {
         case TableAction.GET_TABLE_PENDING :
             return state.merge({

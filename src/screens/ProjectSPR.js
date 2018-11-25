@@ -53,7 +53,7 @@ class ProjectSPR extends Component {
                             {this.props.priceInfo &&
                                 <ProjectPriceTable
 
-                                    name={this.props.priceInfo || 'выберете тариф'}
+                                    name={this.props.priceInfo}
                                     currency={this.props.priceInfo}
                                     price={this.props.priceInfo}
                                     cent={this.props.priceInfo}

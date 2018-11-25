@@ -3,9 +3,6 @@ import initialState from '../store/initialState';
 
 function reducer(state = initialState.order, action = {}) {
     const { type = '', payload = {} } = action;
-    const {
-        loading,
-    } = payload;
     switch (type) {
         case OrderAction.NEW_ORDER :
             return state.merge({

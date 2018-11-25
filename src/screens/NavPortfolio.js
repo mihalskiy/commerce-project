@@ -1,20 +1,13 @@
 import {LinkButton} from "../components/Button";
 import React from "react";
-import {ProjectHeaderInner, ProjectDetails, ProjectTitle,ProjectMeta, ProjectMetaItem, ProjectDescription, ProjectHeaderContainer} from "../components/Project";
-import { getTable } from '../redux/table/table.action';
-import { Media, AnimFade, ColorTint } from '../utils/StyleUtils';
+import {ProjectDetails, ProjectTitle, ProjectDescription, ProjectHeaderContainer} from "../components/Project";
+import { Media } from '../utils/StyleUtils';
 import Circle from 'react-circle';
-
-import { connect } from 'react-redux';
 import styled from "styled-components";
 
 
 
 const prerender = window.location.port === '45678';
-
-const mapDispatchToProps = {
-    getTable: getTable
-};
 
 let NavPortfolio = ({ title, description, url, src }) => (
     <ProjectHeaderContainer>

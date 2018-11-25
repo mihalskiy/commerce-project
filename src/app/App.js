@@ -4,20 +4,25 @@ import BrowserRouter from 'react-router-dom/BrowserRouter';
 import { Transition, TransitionGroup } from 'react-transition-group';
 import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
+import Home from '../screens/Home'
+import ProjectSPR from '../screens/ProjectSPR'
+import Contact from '../screens/ProjectSPR'
+import ProjectPortfolio from '../screens/ProjectPortfolio'
+import ProjectSlice from '../screens/ProjectSlice'
+import NotFound from '../screens/NotFound'
 import { Helmet } from "react-helmet";
-import asyncComponent from '../components/AsyncComponent';
 import Header from '../components/Header';
 import NavToggle from '../components/NavToggle';
 import Theme from '../utils/Theme';
 import GothamBook from '../fonts/gotham-book.woff2';
 import GothamMedium from '../fonts/gotham-medium.woff2';
 
-const Home = asyncComponent(props => import("../screens/Home"));
-const Contact = asyncComponent(props => import("../screens/Contact"));
-const ProjectSPR = asyncComponent(props => import("../screens/ProjectSPR"));
-const ProjectPortfolio = asyncComponent(props => import("../screens/ProjectPortfolio"));
-const ProjectSlice = asyncComponent(props => import("../screens/ProjectSlice"));
-const NotFound = asyncComponent(props => import("../screens/NotFound"));
+//const Home = asyncComponent(props => import("../screens/Home"));
+// const Contact = asyncComponent(props => import("../screens/Contact"));
+// const ProjectSPR = asyncComponent(props => import("../screens/ProjectSPR"));
+// const ProjectPortfolio = asyncComponent(props => import("../screens/ProjectPortfolio"));
+// const ProjectSlice = asyncComponent(props => import("../screens/ProjectSlice"));
+// const NotFound = asyncComponent(props => import("../screens/NotFound"));
 
 const consoleMessage = `
 __  __  __
@@ -25,7 +30,7 @@ __  __  __
  \u005C \u005C\u2215\u005C \u005C
   \u005C\u2215  \u005C\u2215
 
-Taking a peek huh? Check out the source code: https://github.com/HamishMW/portfolio-2018
+Taking a peek huh? Check out the source code: https://github.com/mihalskiy/commerce-project
 
 `;
 

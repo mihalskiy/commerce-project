@@ -1,7 +1,6 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
 import actionTypes, {fetchSuccessAction} from "./order.action";
 import { Api } from './Api';
-import {getTableSuccess} from "../table/table.action";
 
 function* addOrderSaga(payload) {
 

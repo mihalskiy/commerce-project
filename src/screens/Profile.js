@@ -12,7 +12,6 @@ import ProfileImgPlaceholder from '../assets/profile-placeholder.jpg';
 import { Media } from '../utils/StyleUtils';
 
 const SparrowLink = 'https://www.smartsparrow.com';
-const ModLink = 'https://www.nexusmods.com/skyrimspecialedition/mods/4806/';
 
 const ProfileText = ({ status }) => (
   <React.Fragment>

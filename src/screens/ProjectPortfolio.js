@@ -7,8 +7,7 @@ import NavPortfolio from '../screens/NavPortfolio';
 import PortfolioList from './PortfolioList';
 import styled from 'styled-components';
 import {
-    ProjectContainer, ProjectSection, ProjectSectionContent, ProjectBackground, ProjectPriceTable} from '../components/Project';
-import ProjectHeader from '../components/ProjectHeader'
+    ProjectContainer, ProjectSection, ProjectSectionContent, ProjectBackground} from '../components/Project';
 import backgroundSpr from '../assets/sky.jpg';
 import backgroundSprLarge from '../assets/sky.jpg';
 import backgroundSprPlaceholder from '../assets/project-large.png';

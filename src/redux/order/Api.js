@@ -1,12 +1,4 @@
 const apiInsertNewOrder = 'http://127.0.0.1:8000/orders';
-let resp = {};
-
-
-function getStatus(status) {
-   setTimeout(()=> {
-       return status
-   },800)
-}
 
 
 //send POST request to add new Order

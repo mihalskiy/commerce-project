@@ -1,12 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {ProjectMetaItem} from "../components/Project";
-
 
 const theme = {
     main: "https://picsum.photos/400/180",
     progress: "25%"
-}
+};
 
 let PortfolioList = ({bg, title, description, list}) =>(
   <PortfolioListContent theme={{main: bg}}>

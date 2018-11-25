@@ -27,10 +27,17 @@ class ProjectHeader extends Component {
 
     handleClick(index, props, e) {
         this.props.getTable(e.currentTarget.dataset.value);
-        this.setState({ activeIndex: index });
+        this.setState({
+            activeIndex: index
+        });
     }
 
-
+    componentWillMount() {
+        this.props.getTable(this.props.roles[0]);
+        this.setState({
+            activeIndex: 0
+        });
+    }
 
 
     render () {
