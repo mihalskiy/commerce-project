@@ -1,27 +1,24 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
 import actionTypes, {postOrder} from "./order.action";
+import {getTableSuccess} from "../table/table.action";
+import { Api } from './Api';
 
-const apiInsertNewOrder = 'http://127.0.0.1:8000/orders';
+function* addOrderSaga(payload) {
 
-function* getTableSaga(payload) {
     try {
-        let response =  fetch(apiInsertNewOrder, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(payload.payload.data)
-        });
-        yield console.log(`response = ${JSON.stringify(response)}`);
-        return yield (response.status === 201);
+        const result = yield Api.insertNewOrder(payload);
+        if (result === true) {
+            debugger
+            yield put({ type: actionTypes.FETCH_ORDER, sort: 'desc'});
+        }
+
     } catch (error) {
         console.error(`Error is : ${error}`);
     }
 }
 
 function* actionWatcher() {
-    yield takeLatest(actionTypes.GET_ORDER, getTableSaga)
+    yield takeLatest(actionTypes.NEW_ORDER, addOrderSaga)
 }
 
 function* Watcher() {

@@ -22,11 +22,13 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 class Contact extends PureComponent {
 
-      constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
             email: '',
             message: '',
+            name: '',
+            phone: '',
             sending: false,
             complete: false
         };
@@ -49,90 +51,118 @@ class Contact extends PureComponent {
         console.log('Your favorite flavor is: ' + this.state);
         this.props.getOrder({
             email: this.state.email,
-            message: this.state.message
+            message: this.state.message,
+            name: this.state.name,
+            phone: this.state.phone
         });
         event.preventDefault();
 
-      /*Firebase.database().ref('messages').push({
-        email: emailValue,
-        message: messageValue,
-      }).then(() => {
-        this.setState({ complete: true, sending: false });
-      }).catch((error) => {
-        this.setState({ sending: false });
-        alert(error);
-      });*/
+        /*Firebase.database().ref('messages').push({
+          email: emailValue,
+          message: messageValue,
+        }).then(() => {
+          this.setState({ complete: true, sending: false });
+        }).catch((error) => {
+          this.setState({ sending: false });
+          alert(error);
+        });*/
     }
 
-  render() {
-    const { status } = this.props;
-    const { email, message, sending, complete } = this.state;
+    render() {
+        const { status } = this.props;
+        const { email, phone, name, message, sending, complete } = this.state;
 
-    console.log('this.state', this.state)
+        console.log('this.state', this.state)
 
-    return (
-      <ContactWrapper>
-        <ScrollToTop status={status} />
-        <Helmet>
-          <title>Contact me</title>
-          <meta
-            name="description"
-            content="Send me a message if you're interested in discussing a project or if you just want to say hi"
-          />
-        </Helmet>
-        <TransitionGroup component={React.Fragment}>
-          {/*{!complete &&*/}
-            <Transition appear timeout={1600} mountOnEnter unmountOnExit>
-              {status => (
-                <ContactForm onSubmit={this.handleClick} role="form">
-                  <ContactTitle status={status} delay={50}>
-                    <DecoderText
-                      text="Say hello"
-                      start={status === 'entering' && !prerender}
-                      offset={140}
+        return (
+            <ContactWrapper>
+                <ScrollToTop status={status} />
+                <Helmet>
+                    <title>Contact me</title>
+                    <meta
+                        name="description"
+                        content="Send me a message if you're interested in discussing a project or if you just want to say hi"
                     />
-                  </ContactTitle>
-                  <ContactDivider status={status} delay={100} />
-                  <ContactInput
-                    status={status}
-                    delay={200}
-                    onChange={this.handleInputChange}
-                    autoComplete="email"
-                    label="Your Email"
-                    id="email"
-                    type="email"
-                    hasValue={!!email}
-                    value={email}
-                    maxLength={320}
-                    required
-                  />
-                  <ContactInput
-                    status={status}
-                    delay={300}
-                    onChange={this.handleInputChange}
-                    autoComplete="off"
-                    label="Message"
-                    id="message"
-                    hasValue={!!message}
-                    value={message}
-                    maxLength={2000}
-                    required
-                    multiline
-                  />
-                  <ContactButton
-                    sending={sending}
-                    loading={sending}
-                    status={status}
-                    delay={400}
-                    icon="send"
-                    type="submit"
-                  >
-                    Send Message
-                  </ContactButton>
-                </ContactForm>
-              )}
-            </Transition>
-         {/* }
+                </Helmet>
+                <TransitionGroup component={React.Fragment}>
+                    {/*{!complete &&*/}
+                    <Transition appear timeout={1600} mountOnEnter unmountOnExit>
+                        {status => (
+                            <ContactForm onSubmit={this.handleClick} role="form">
+                                <ContactTitle status={status} delay={50}>
+                                    <DecoderText
+                                        text="Say hello"
+                                        start={status === 'entering' && !prerender}
+                                        offset={140}
+                                    />
+                                </ContactTitle>
+                                <ContactDivider status={status} delay={100} />
+                                <ContactInput
+                                    status={status}
+                                    delay={200}
+                                    onChange={this.handleInputChange}
+                                    autoComplete="name"
+                                    label="Имя"
+                                    id="name"
+                                    type="text"
+                                    hasValue={!!name}
+                                    value={name}
+                                    maxLength={320}
+                                    required
+                                />
+                                <ContactInput
+                                    status={status}
+                                    delay={200}
+                                    onChange={this.handleInputChange}
+                                    autoComplete="number"
+                                    label="телефон"
+                                    id="phone"
+                                    type="number"
+                                    hasValue={!!phone}
+                                    value={phone}
+                                    maxLength={320}
+                                    required
+                                />
+                                <ContactInput
+                                    status={status}
+                                    delay={200}
+                                    onChange={this.handleInputChange}
+                                    autoComplete="email"
+                                    label="Email"
+                                    id="email"
+                                    type="email"
+                                    hasValue={!!email}
+                                    value={email}
+                                    maxLength={320}
+                                    required
+                                />
+                                <ContactInput
+                                    status={status}
+                                    delay={300}
+                                    onChange={this.handleInputChange}
+                                    autoComplete="off"
+                                    label="Сooбщение"
+                                    id="message"
+                                    hasValue={!!message}
+                                    value={message}
+                                    maxLength={2000}
+                                    required
+                                    multiline
+                                />
+                                <ContactButton
+                                    sending={sending}
+                                    loading={sending}
+                                    status={status}
+                                    delay={400}
+                                    icon="send"
+                                    type="submit"
+                                >
+                                    Send Message
+                                </ContactButton>
+                            </ContactForm>
+                        )}
+                    </Transition>
+                    {/* }
           {complete &&
             <Transition appear timeout={0} mountOnEnter unmountOnExit>
               {status => (
@@ -159,10 +189,10 @@ class Contact extends PureComponent {
               )}
             </Transition>
           }*/}
-        </TransitionGroup>
-      </ContactWrapper>
-    );
-  }
+                </TransitionGroup>
+            </ContactWrapper>
+        );
+    }
 }
 
 export default connect(null, mapDispatchToProps)(Contact);

@@ -11,11 +11,18 @@ function reducer(state = initialState.order, action = {}) {
         loading,
     } = payload;
     switch (type) {
-        case OrderAction.GET_ORDER :
+        case OrderAction.NEW_ORDER :
             return state.merge({
                 loading: false,
                 ...payload
             });
+        case OrderAction.FETCH_SUCCEEDED :
+            return state.merge({
+                loading: false,
+                ...payload
+            });
+        case OrderAction.FETCH_ORDER :
+            return state.merge({});
         case OrderAction.POST_ORDER :
             return state.merge({
                 loading: false,
