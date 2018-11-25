@@ -9,8 +9,7 @@ import backgroundSpr from '../assets/spr-background.jpg';
 import backgroundSprLarge from '../assets/spr-background-large.jpg';
 import backgroundSprPlaceholder from '../assets/spr-background-placeholder.jpg';
 import {bindActionCreators} from "redux";
-import {getTable, getTableSuccess} from "../redux/table/table.action";
-import actionTypes from "../redux/table/table.action";
+import { getTableSuccess} from "../redux/table/table.action";
 const prerender = window.location.port === '45678';
 
 
@@ -75,7 +74,6 @@ class ProjectSPR extends Component {
 };
 
 const mapStateToProps = function (state) {
-    console.log(' state.table.priceInfo',  state.table.priceInfo)
     return {
         tableName: state.table.tableName,
         priceInfo: state.table.priceInfo

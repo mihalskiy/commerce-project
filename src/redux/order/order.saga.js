@@ -1,18 +1,18 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
-import actionTypes, {postOrder} from "./order.action";
-import {getTableSuccess} from "../table/table.action";
+import actionTypes, {fetchSuccessAction} from "./order.action";
 import { Api } from './Api';
+import {getTableSuccess} from "../table/table.action";
 
 function* addOrderSaga(payload) {
 
     try {
         const result = yield Api.insertNewOrder(payload);
-        if (result === true) {
-            debugger
-            yield put({ type: actionTypes.FETCH_ORDER, sort: 'desc'});
+        if (result.ok) {
+            yield put(fetchSuccessAction(result.ok));
         }
 
     } catch (error) {
+        yield put({ type: actionTypes.FETCH_FAILED_ORDER, error });
         console.error(`Error is : ${error}`);
     }
 }

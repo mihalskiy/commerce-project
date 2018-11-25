@@ -1,9 +1,5 @@
-import Immutable from 'seamless-immutable';
-
 import OrderAction from './order.action';
 import initialState from '../store/initialState';
-
-export const INITIAL_STATE = Immutable(initialState.order);
 
 function reducer(state = initialState.order, action = {}) {
     const { type = '', payload = {} } = action;
@@ -21,12 +17,9 @@ function reducer(state = initialState.order, action = {}) {
                 loading: false,
                 ...payload
             });
-        case OrderAction.FETCH_ORDER :
-            return state.merge({});
-        case OrderAction.POST_ORDER :
+        case OrderAction.FETCH_FAILED_ORDER :
             return state.merge({
-                loading: false,
-                ...payload
+
             });
         default:
             return state;

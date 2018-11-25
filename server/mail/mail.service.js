@@ -5,17 +5,17 @@ require('dotenv').config();
 module.exports = {
     mail (user, text) {
         const transporter = nodemailer.createTransport(smtpTransport({
-            service: process.env.SERVICE,
-            host: process.env.HOST,
+            service: process.env.MAIL_SERVICE,
+            host: process.env.MAIL_HOST,
             auth: {
-                user: process.env.ROOT_USER,
-                pass: process.env.PASS
+                user: process.env.MAIL_USER,
+                pass: process.env.MAIL_PASS
             }
         }));
 
         const mailOptions = {
             from: user,
-            to: process.env.ROOT_USER,
+            to: process.env.MAIL_USER,
             subject: 'Sending Email using Node.js[nodemailer]',
             text: user + 'Sending Email: - '+ text
         };

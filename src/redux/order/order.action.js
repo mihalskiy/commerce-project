@@ -2,16 +2,14 @@
 
 const GET_ORDER = 'order/GET_ORDER';
 const NEW_ORDER = 'order/NEW_ORDER';
-const FETCH_ORDER = 'order/FETCH_ORDER';
-const FETCH_SUCCEEDED = 'order/POST_ORDER';
-const POST_ORDER = 'order/POST_ORDER';
+const FETCH_FAILED_ORDER = 'order/FETCH_FAILED_ORDER';
+const FETCH_SUCCEEDED = 'order/FETCH_SUCCEEDED';
 
 const actionTypes = {
     GET_ORDER,
     NEW_ORDER,
-    FETCH_ORDER,
+    FETCH_FAILED_ORDER,
     FETCH_SUCCEEDED,
-    POST_ORDER
 };
 
 export default actionTypes;
@@ -25,28 +23,18 @@ export const  getOrder = data => {
     }
 };
 
-export const  fetchSuccessAction = data => {
+export const  fetchSuccessAction = (payload) => {
     return {
-        type: GET_ORDER,
+        type: FETCH_SUCCEEDED,
         payload: {
-            data
+            data: payload
         }
     }
 };
 
 export const fetchFailedAction = (error) => {
     return {
-        type: FETCH_ORDER,
+        type: FETCH_FAILED_ORDER,
         error
     }
 }
-
-export const  postOrder = payload => {
-    debugger
-    return {
-        type: POST_ORDER,
-        payload: {
-            payload
-        }
-    }
-};

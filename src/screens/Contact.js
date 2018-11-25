@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import {connect} from "react-redux";
 import styled, { css } from 'styled-components';
 import { TransitionGroup, Transition } from 'react-transition-group';
 import { Helmet } from 'react-helmet';
@@ -7,16 +8,16 @@ import DecoderText from '../components/DecoderText';
 import { RouterButton, ProjectHeaderButton } from '../components/Button';
 import { Media, AnimFade } from '../utils/StyleUtils';
 import ScrollToTop from '../utils/ScrollToTop';
-import { getOrder } from '../redux/order/order.action';
+import {getOrder, fetchSuccessAction } from '../redux/order/order.action';
 import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
 
 
 const prerender = window.location.port === '45678';
 const initDelay = 300;
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    getOrder
+    getOrder,
+    fetchSuccessAction
 
 }, dispatch);
 
@@ -47,8 +48,6 @@ class Contact extends PureComponent {
     }
 
     handleClick (event) {
-
-        console.log('Your favorite flavor is: ' + this.state);
         this.props.getOrder({
             email: this.state.email,
             message: this.state.message,
@@ -56,23 +55,15 @@ class Contact extends PureComponent {
             phone: this.state.phone
         });
         event.preventDefault();
+        this.props.fetchSuccessAction()
 
-        /*Firebase.database().ref('messages').push({
-          email: emailValue,
-          message: messageValue,
-        }).then(() => {
-          this.setState({ complete: true, sending: false });
-        }).catch((error) => {
-          this.setState({ sending: false });
-          alert(error);
-        });*/
     }
 
     render() {
-        const { status } = this.props;
-        const { email, phone, name, message, sending, complete } = this.state;
+        const { status,complete } = this.props;
+        const { email, phone, name, message, sending } = this.state;
 
-        console.log('this.state', this.state)
+        console.log('this.complete', complete)
 
         return (
             <ContactWrapper>
@@ -85,7 +76,7 @@ class Contact extends PureComponent {
                     />
                 </Helmet>
                 <TransitionGroup component={React.Fragment}>
-                    {/*{!complete &&*/}
+                    {!complete &&
                     <Transition appear timeout={1600} mountOnEnter unmountOnExit>
                         {status => (
                             <ContactForm onSubmit={this.handleClick} role="form">
@@ -96,7 +87,7 @@ class Contact extends PureComponent {
                                         offset={140}
                                     />
                                 </ContactTitle>
-                                <ContactDivider status={status} delay={100} />
+                                <ContactDivider status={status} delay={100}/>
                                 <ContactInput
                                     status={status}
                                     delay={200}
@@ -162,7 +153,7 @@ class Contact extends PureComponent {
                             </ContactForm>
                         )}
                     </Transition>
-                    {/* }
+                    }
           {complete &&
             <Transition appear timeout={0} mountOnEnter unmountOnExit>
               {status => (
@@ -171,10 +162,10 @@ class Contact extends PureComponent {
                     status={status}
                     delay={0}
                   >
-                    Message Sent
+                    Спасибо {name}! Ваш заказ отправлен
                   </ContactCompleteTitle>
                   <ContactCompleteText status={status} delay={200}>
-                    I'll get back to you within a couple days, sit tight
+                      Ваш будущий сайт слишком хорош, чтобы принадлежать кому-то другому
                   </ContactCompleteText>
                   <ContactCompleteButton
                     secondary
@@ -183,19 +174,25 @@ class Contact extends PureComponent {
                     delay={400}
                     icon="chevronRight"
                   >
-                    Back to homepage
+                    Вернуться на главную страницу
                   </ContactCompleteButton>
                 </ContactComplete>
               )}
             </Transition>
-          }*/}
+          }
                 </TransitionGroup>
             </ContactWrapper>
         );
     }
 }
 
-export default connect(null, mapDispatchToProps)(Contact);
+const mapStateToProps = function (state) {
+    return {
+        complete: state.order.data,
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);
 
 const ContactWrapper = styled.section`
   display: flex;
