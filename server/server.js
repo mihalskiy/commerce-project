@@ -7,6 +7,7 @@ const cors = require('cors')
 const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(cors())
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.header("Access-Control-Allow-Credentials", "true");
@@ -15,7 +16,7 @@ app.use(function(req, res, next) {
     next();
 });app.use(bodyParser.urlencoded({ extended: false }));
 
-require('./server/routes/router')(app);
+require('./routes/router')(app);
 app.get('*', (req, res) => res.status(200).send({
     message: 'Welcome to the beginning of nothingness.',
 }));

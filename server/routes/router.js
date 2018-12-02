@@ -1,17 +1,19 @@
 const ordersController = require('../controllers').orders;
 const orderItemsController = require('../controllers').orderItems;
 require('dotenv').config();
+var cors = require('cors')
+
 
 module.exports = (app) => {
-  app.get('/', (req, res) => res.status(200).send({
+  app.get('/api', (req, res) => res.status(200).send({
     message: process.env.ROOT_USER + '- test',
   }));
 
-  app.post('/orders', ordersController.create);
-  app.get('/orders', ordersController.list);
-  app.get('/order/:id', ordersController.retrieve);
-  app.put('/order/:id', ordersController.update);
-  app.delete('/order/:id', ordersController.destroy);
+  app.post('/api/orders', cors(), ordersController.create);
+  app.get('/api/orders', cors(), ordersController.list);
+  app.get('/api/order/:id', ordersController.retrieve);
+  app.put('/api/order/:id', ordersController.update);
+  app.delete('/api/order/:id', ordersController.destroy);
 
   /*app.post('/api/todos/:todoId/items', orderItemsController.create);
   app.put('/api/todos/:todoId/items/:todoItemId', orderItemsController.update);

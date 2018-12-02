@@ -6,7 +6,7 @@ import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
 import Home from '../screens/Home'
 import ProjectSPR from '../screens/ProjectSPR'
-import Contact from '../screens/ProjectSPR'
+import Contact from '../screens/Contact'
 import ProjectPortfolio from '../screens/ProjectPortfolio'
 import ProjectSlice from '../screens/ProjectSlice'
 import NotFound from '../screens/NotFound'

@@ -1,4 +1,4 @@
-const apiInsertNewOrder = 'http://127.0.0.1:8000/orders';
+const apiInsertNewOrder = 'http://localhost:8000/api/orders';
 
 
 //send POST request to add new Order
@@ -6,6 +6,9 @@ function* insertNewOrder(payload) {
     try {
         let response =  fetch(apiInsertNewOrder, {
             method: 'POST',
+            crossDomain:true,
+            mode: "cors", // or without this line
+            redirect: 'follow',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',

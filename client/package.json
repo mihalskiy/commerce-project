@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://localhost.com",
   "private": true,
+  "proxy": "http://127.0.0.1:8000",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.1.1",
@@ -11,24 +12,14 @@
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
-    "react-scripts": "1.1.5",
-    "react-snap": "^1.19.0"
+    "react-scripts": "1.1.5"
   },
   "dependencies": {
     "autosize": "^4.0.2",
-    "axios": "^0.18.0",
-    "body-parser": "^1.15.2",
-    "cors": "^2.8.5",
     "dotenv": "^6.1.0",
     "es6-tween": "^5.3.1",
     "express": "^4.14.0",
     "ios-inner-height": "^1.1.0",
-    "morgan": "^1.7.0",
-    "nodemailer": "^4.7.0",
-    "nodemailer-smtp-transport": "^2.7.4",
-    "nodemon": "^1.11.0",
-    "pg": "^6.2.4",
-    "pg-hstore": "^2.3.2",
     "react": "^16.6.1",
     "react-circle": "^1.1.1",
     "react-dom": "^16.6.1",
@@ -42,12 +33,11 @@
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.16.2",
     "seamless-immutable": "^7.1.4",
-    "sequelize": "^4.41.2",
     "styled-components": "^4.0.3",
     "three": "^0.95.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_ENV=development react-scripts start --proxy-config proxy.config.json",
     "serve": "./node_modules/.bin/nodemon ./bin/www -w server.js -w server",
     "migrate": "./node_modules/.bin/sequelize db:migrate",
     "fix": "eslint ./src --fix",
@@ -55,9 +45,5 @@
     "#postbuild": "node scripts/prerender.js && sw-precache --config=sw-precache-config.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "reactSnap": {
-    "skipThirdPartyRequests": true,
-    "headless": false
   }
 }
