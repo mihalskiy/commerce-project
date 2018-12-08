@@ -1,8 +1,8 @@
 {
-  "name": "node-telephone-user-search",
+  "name": "commerce-project",
   "version": "1.0.0",
   "description": "node-telephone-user-search \n If you dont have install node-js, please go this link [https://nodejs.org](https://nodejs.org)",
-  "main": "index.js",
+  "main": "server.js",
   "config": {
     "engine": "getcontact",
     "dockerHostUrl": "197229461665.dkr.ecr.us-east-2.amazonaws.com"
@@ -11,7 +11,7 @@
     "//prestart": "npm run validateSwagger && npm run fix",
     "//db:create": "node_modules/.bin/create_database",
     "//db:drop": "node_modules/.bin/drop_database",
-    "start": "nodemon ./bin/www -w app.js -w server  -e js,json,yaml",
+    "start": "nodemon ./bin/www -w sever.js -w server  -e js,json,yaml",
     "validateSwagger": "swagger-tools validate ./server/middleware/swagger/swaggerDocs.yaml",
     "fix": "eslint --fix .",
     "db:init": "sequelize db:migrate",
