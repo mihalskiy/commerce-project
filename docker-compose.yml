@@ -20,7 +20,7 @@ services:
   client:
     build:
       context: ./client/
-    command: npm start
+    command: npm run build
     volumes:
       - ./client/:/usr/app
       - /usr/app/node_modules

@@ -1,7 +1,7 @@
 {
   "name": "portfolio-2018",
   "version": "0.1.0",
-  "homepage": "https://localhost.com",
+  "homepage": "http://www.nurmaget.com",
   "private": true,
   "proxy": "http://127.0.0.1:8000",
   "devDependencies": {
@@ -38,9 +38,6 @@
   },
   "scripts": {
     "start": "NODE_ENV=development react-scripts start --proxy-config proxy.config.json",
-    "serve": "./node_modules/.bin/nodemon ./bin/www -w server.js -w server",
-    "migrate": "./node_modules/.bin/sequelize db:migrate",
-    "fix": "eslint ./src --fix",
     "build": "NODE_ENV=development react-scripts build",
     "#postbuild": "node scripts/prerender.js && sw-precache --config=sw-precache-config.js",
     "test": "react-scripts test --env=jsdom",
