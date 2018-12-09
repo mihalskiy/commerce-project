@@ -37,8 +37,8 @@
     "three": "^0.95.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "PUBLIC_URL=http://www.nurmaget.com PORT=80 react-scripts build",
+    "start": "PUBLIC_URL=http://www.nurmaget.com react-scripts start || react-scripts start",
+    "build": "PUBLIC_URL=http://www.nurmaget.com react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
