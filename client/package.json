@@ -38,8 +38,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "NODE_ENV=development react-scripts build",
-    "#postbuild": "node scripts/prerender.js && sw-precache --config=sw-precache-config.js",
+    "build": "PUBLIC_URL=http://www.nurmaget.com react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

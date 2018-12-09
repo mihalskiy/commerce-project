@@ -28,6 +28,7 @@ const HeaderIcons = ({ toggleMenu }) => (
     <HeaderNavIconLinkRouter
       aria-label="Contact"
       to="/contact"
+      href="/contact"
       onClick={!!toggleMenu ? () => toggleMenu() : null}
     >
       <HeaderNavIcon icon="email" />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
 import { Helmet } from 'react-helmet';
@@ -31,6 +32,7 @@ const NotFound = () => (
                 secondary
                 status={status}
                 to="/"
+                href="/"
                 icon="chevronRight"
               >Вернуться на главную страницу
               </NotFoundButton>

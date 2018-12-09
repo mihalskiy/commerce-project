@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
-import BrowserRouter from 'react-router-dom/BrowserRouter';
 import { Transition, TransitionGroup } from 'react-transition-group';
-import Route from 'react-router-dom/Route';
-import Switch from 'react-router-dom/Switch';
+import {
+    HashRouter as Router,
+    Route,
+    BrowserRouter,
+    Switch
+} from 'react-router-dom';
 import Home from '../screens/Home'
 import ProjectSPR from '../screens/ProjectSPR'
 import Contact from '../screens/Contact'
@@ -71,48 +74,88 @@ class App extends Component {
 
   render() {
     const { menuOpen } = this.state;
+    console.log('process.env.PUBLIC_URL', process.env.PUBLIC_URL)
     return (
-      <ThemeProvider theme={Theme}>
-        <BrowserRouter>
-          <Route render={({ location }) => (
-            <React.Fragment>
-              <Helmet>
-                <link rel="preload" href={`${GothamBook}`} as="font" crossorigin="crossorigin" />
-                <link rel="preload" href={`${GothamMedium}`} as="font" crossorigin="crossorigin" />
-                <style>{fontStyles}</style>
-              </Helmet>
-              <GlobalStyles />
-              <SkipToMain href="#MainContent">Skip to main content</SkipToMain>
-              <Header toggleMenu={this.toggleMenu} menuOpen={menuOpen} />
-              <NavToggle onClick={this.toggleMenu} menuOpen={menuOpen} />
-              <TransitionGroup component={React.Fragment} >
-                <Transition
-                  key={location.pathname}
-                  timeout={500}
-                  onEnter={this.setBodyOverflow('hidden')}
-                  onExited={this.setBodyOverflow('')}
-                >
-                  {status => (
-                    <MainContent status={status} id="MainContent" role="main">
-                      <Helmet>
-                        <link rel="canonical" href={`${location.pathname}`} />
-                      </Helmet>
-                      <Switch location={location}>
-                        <Route exact path="/" render={props => <Home {...props} status={status} />} />
-                        <Route path="/contact" render={props => <Contact {...props} status={status} />} />
-                        <Route path="/price" render={props => <ProjectSPR {...props} status={status} />} />
-                        <Route path="/portfolio" render={props => <ProjectPortfolio {...props} status={status} />} />
-                        <Route path="/projects/slice" render={props => <ProjectSlice {...props} status={status} />} />
-                        <Route render={props => <NotFound {...props} status={status} />} />
-                      </Switch>
-                    </MainContent>
-                  )}
-                </Transition>
-              </TransitionGroup>
-            </React.Fragment>
-          )} />
-        </BrowserRouter>
-      </ThemeProvider>
+        <React.Fragment>
+            <ThemeProvider theme={Theme}>
+                <BrowserRouter>
+                    <Route render={({ location }) => (
+                        <React.Fragment>
+                            <Helmet>
+                                <link rel="preload" href={`${GothamBook}`} as="font" crossorigin="crossorigin" />
+                                <link rel="preload" href={`${GothamMedium}`} as="font" crossorigin="crossorigin" />
+                                <style>{fontStyles}</style>
+                            </Helmet>
+                            <GlobalStyles />
+                            <SkipToMain href="#MainContent">Skip to main content</SkipToMain>
+                            <Header toggleMenu={this.toggleMenu} menuOpen={menuOpen} />
+                            <NavToggle onClick={this.toggleMenu} menuOpen={menuOpen} />
+                            <TransitionGroup component={React.Fragment} >
+                                <Transition
+                                    key={location.pathname}
+                                    timeout={500}
+                                    onEnter={this.setBodyOverflow('hidden')}
+                                    onExited={this.setBodyOverflow('')}
+                                >
+                                    {status => (
+                                        <MainContent status={status} id="MainContent" role="main">
+                                            <Helmet>
+                                                <link rel="canonical" href={`${location.pathname}`} />
+                                            </Helmet>
+                                            <Switch location={location}>
+                                                <ThemeProvider theme={Theme}>
+                                                    <BrowserRouter>
+                                                        <Route render={({ location }) => (
+                                                            <React.Fragment>
+                                                                <Helmet>
+                                                                    <link rel="preload" href={`${GothamBook}`} as="font" crossorigin="crossorigin" />
+                                                                    <link rel="preload" href={`${GothamMedium}`} as="font" crossorigin="crossorigin" />
+                                                                    <style>{fontStyles}</style>
+                                                                </Helmet>
+                                                                <GlobalStyles />
+                                                                <SkipToMain href="#MainContent">Skip to main content</SkipToMain>
+                                                                <Header toggleMenu={this.toggleMenu} menuOpen={menuOpen} />
+                                                                <NavToggle onClick={this.toggleMenu} menuOpen={menuOpen} />
+                                                                <TransitionGroup component={React.Fragment} >
+                                                                    <Transition
+                                                                        key={location.pathname}
+                                                                        timeout={500}
+                                                                        onEnter={this.setBodyOverflow('hidden')}
+                                                                        onExited={this.setBodyOverflow('')}
+                                                                    >
+                                                                        {status => (
+                                                                            <MainContent status={status} id="MainContent" role="main">
+                                                                                <Helmet>
+                                                                                    <link rel="canonical" href={`${location.pathname}`} />
+                                                                                </Helmet>
+                                                                                <Switch location={location}>
+                                                                                    <Route exact path="/" render={props => <Home {...props} status={status} />} />
+                                                                                    <Route path="/projects/contact" render={props => <Contact {...props} status={status} />} />
+                                                                                    <Route path="/projects/price" render={props => <ProjectSPR {...props} status={status} />} />
+                                                                                    <Route path="/projects/portfolio" render={props => <ProjectPortfolio {...props} status={status} />} />
+                                                                                    <Route path="/projects/slice" render={props => <ProjectSlice {...props} status={status} />} />
+                                                                                    <Route render={props => <NotFound {...props} status={status} />} />
+                                                                                </Switch>
+                                                                            </MainContent>
+                                                                        )}
+                                                                    </Transition>
+                                                                </TransitionGroup>
+                                                            </React.Fragment>
+                                                        )} />
+                                                    </BrowserRouter>
+                                                </ThemeProvider>
+
+                                            </Switch>
+                                        </MainContent>
+                                    )}
+                                </Transition>
+                            </TransitionGroup>
+                        </React.Fragment>
+                    )} />
+                </BrowserRouter>
+            </ThemeProvider>
+        </React.Fragment>
+
     );
   }
 }

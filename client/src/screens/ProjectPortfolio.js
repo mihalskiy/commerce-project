@@ -74,7 +74,7 @@ let ProjectPortfolio = ({ status, table = {} }) => (
             <NavPortfolio
                 title={title}
                 description={description}
-                url="/contact"
+                url="/projects/contact"
                 src={backgroundSprPlaceholder}
             />
             <ProjectSection>

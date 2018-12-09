@@ -47,6 +47,7 @@ const Profile = ({
                 secondary
                 status={status}
                 to="/contact"
+                href="/contact"
                 style={{ marginTop: 20 }}
                 icon="send"
               >

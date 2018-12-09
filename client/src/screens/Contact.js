@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import {connect} from "react-redux";
 import styled, { css } from 'styled-components';
 import { TransitionGroup, Transition } from 'react-transition-group';
@@ -170,6 +171,7 @@ class Contact extends PureComponent {
                   <ContactCompleteButton
                     secondary
                     to="/"
+                    href="/"
                     status={status}
                     delay={400}
                     icon="chevronRight"
@@ -192,7 +194,9 @@ const mapStateToProps = function (state) {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contact);
+Contact = connect(mapStateToProps, mapDispatchToProps)(Contact);
+export default Contact;
+
 
 const ContactWrapper = styled.section`
   display: flex;
