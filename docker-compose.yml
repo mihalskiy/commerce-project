@@ -34,3 +34,11 @@ services:
      POSTGRES_PASSWORD: password
      POSTGRES_USER: user
      POSTGRES_DB: db
+
+  nginx:
+    image: nginx:1.13.12-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./usr/share/nginx/html
+      - /usr/app/client/build: /usr/share/nginx/html
