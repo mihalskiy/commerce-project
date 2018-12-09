@@ -4,7 +4,7 @@ services:
   server:
     build:
       context: ./server/
-    command: /usr/app/node_modules/.bin/nodemon src/index.js
+    command: npm start &  sequelize db:migrate
     volumes:
       - ./server/:/usr/app
       - /usr/app/node_modules
@@ -12,7 +12,7 @@ services:
       - "8000:8000"
     # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
     environment:
-        DATABASE_URL: postgres://user:password@db/db
+      CONNECTION_STRING_DEV: postgres://user:password@db/db
     links:
         - db
     depends_on:
@@ -24,8 +24,6 @@ services:
     volumes:
       - ./client/:/usr/app
       - /usr/app/node_modules
-    depends_on:
-      - server
     ports:
       - "3000:3000"
   db:
