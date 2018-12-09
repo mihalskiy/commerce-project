@@ -37,7 +37,7 @@
     "three": "^0.95.0"
   },
   "scripts": {
-    "start": "NODE_ENV=development react-scripts start --proxy-config proxy.config.json",
+    "start": "react-scripts start",
     "build": "NODE_ENV=development react-scripts build",
     "#postbuild": "node scripts/prerender.js && sw-precache --config=sw-precache-config.js",
     "test": "react-scripts test --env=jsdom",
