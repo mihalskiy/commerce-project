@@ -1,9 +1,9 @@
 {
   "name": "portfolio-2018",
   "version": "0.1.0",
-  "homepage": "http://127.0.0.1",
+  "homepage": "http://www.nurmaget.com",
   "private": true,
-  "proxy": "http://127.0.0.1:8000",
+  "proxy": "http://www.nurmaget.com",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.1.1",
@@ -37,7 +37,7 @@
     "three": "^0.95.0"
   },
   "scripts": {
-    "start": "PUBLIC_URL=http://www.nurmaget.com react-scripts start || react-scripts start",
+    "start": "react-scripts start",
     "build": "PUBLIC_URL=http://www.nurmaget.com react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

@@ -23,6 +23,8 @@ services:
     volumes:
       - ./client/:/usr/app
       - /usr/app/node_modules
+    environment:
+      PUBLIC_URL: http://127.0.0.1
     ports:
       - "80:80"
   db:
