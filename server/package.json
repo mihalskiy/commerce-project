@@ -11,7 +11,7 @@
     "//prestart": "npm run validateSwagger && npm run fix",
     "//db:create": "node_modules/.bin/create_database",
     "//db:drop": "node_modules/.bin/drop_database",
-    "start": "nodemon ./bin/www -w app.js -w server",
+    "start": "nodemon ./bin/www -w server.js -w server",
     "start:dev": "./node_modules/.bin/nodemon ./bin/www -w app.js -w server",
     "validateSwagger": "swagger-tools validate ./server/middleware/swagger/swaggerDocs.yaml",
     "fix": "eslint --fix .",

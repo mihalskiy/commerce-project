@@ -4,7 +4,7 @@ require('dotenv').config();
 
 module.exports = (app) => {
   app.get('/api', (req, res) => res.status(200).send({
-    message: process.env.ROOT_USER + '- test',
+    message: process.env.PUBLIC_URL + '- test',
   }));
 
   app.post('/api/orders', ordersController.create);

@@ -45,7 +45,7 @@ class ProjectSPR extends Component {
                     <ProjectHeader
                         title={title}
                         description={description}
-                        url="/projects/contact"
+                        url="/contact"
                         roles={roles}
                     />
                     <ProjectSection>
