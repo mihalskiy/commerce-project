@@ -18,6 +18,7 @@ services:
       MAIL_PASS: ${MAIL_PASS}
       MAIL_SERVICE: ${MAIL_SERVICE}
       PUBLIC_URL: http://nurmaget.com
+      NODE_ENV: production;
     links:
         - db
     depends_on:
