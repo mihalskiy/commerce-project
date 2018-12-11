@@ -1,11 +1,23 @@
 {
   "development": {
-    "use_env_variable": "CONNECTION_STRING_DEV"
+    "username": "ruslan",
+    "password": "1q2w3e4r",
+    "database": "ruslan",
+    "host": "user.c9nmubonftl6.us-west-2.rds.amazonaws.com",
+    "dialect": "postgres"
   },
   "test": {
-    "use_env_variable": "CONNECTION_STRING_TEST"
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "CONNECTION_STRING_PROD"
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }
