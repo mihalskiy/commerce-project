@@ -13,6 +13,15 @@ services:
     # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
     environment:
       CONNECTION_STRING_DEV: postgres://user:password@db/db
+<<<<<<< HEAD
+=======
+      MAIL_HOST: ${MAIL_HOST}
+      MAIL_USER: ${MAIL_USER}
+      MAIL_PASS: ${MAIL_PASS}
+      MAIL_SERVICE: ${MAIL_SERVICE}
+      PUBLIC_URL: http://nurmaget.com
+      NODE_ENV: production;
+>>>>>>> 4d0c82e19cdb407ac0b7ac89cbc52abc2e2c6a72
     links:
         - db
     depends_on:
