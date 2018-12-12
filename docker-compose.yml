@@ -4,7 +4,7 @@ services:
   server:
     build:
       context: ./server/
-    command: npm start & sequelize db:migrate
+    command: npm start && npm run db:init
     volumes:
       - ./server/:/usr/app
       - /usr/app/node_modules
