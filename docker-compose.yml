@@ -4,7 +4,7 @@ services:
   server:
     build:
       context: ./server/
-    command: npm start &  sequelize db:migrate
+    command: npm start & sequelize db:migrate
     volumes:
       - ./server/:/usr/app
       - /usr/app/node_modules
@@ -18,7 +18,7 @@ services:
       MAIL_PASS: ${MAIL_PASS}
       MAIL_SERVICE: ${MAIL_SERVICE}
       PUBLIC_URL: http://nurmaget.com
-      NODE_ENV: production;
+      NODE_ENV: ${NODE_ENV}
     links:
         - db
     depends_on:
