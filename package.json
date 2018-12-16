@@ -1,7 +1,7 @@
 {
   "name": "portfolio-2018",
   "version": "0.1.0",
-  "homepage": "http://localhost:3000",
+  "homepage": "http://nurmaget.com",
   "private": true,
   "proxy": "http://ec2-54-190-128-187.us-west-2.compute.amazonaws.com",
   "devDependencies": {
