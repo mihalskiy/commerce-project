@@ -3,26 +3,15 @@
 FROM node:9.4.0-alpine as client
 
 WORKDIR /usr/app/client/
-COPY client/package*.json ./
+COPY package*.json ./
 RUN npm install -qy
-COPY client/ ./
+COPY  client .
 RUN npm run build
 
-
-# Setup the server
-
-FROM node:9.4.0-alpine
-
-WORKDIR /usr/app/
-COPY --from=client /usr/app/client/build/ ./client/build/
-
-WORKDIR /usr/app/server/
-COPY server/package*.json ./
-RUN npm install -qy
-COPY server/ ./
-
-ENV PORT 8000
-
-EXPOSE 8000
-
-CMD ["npm", "start"]
+FROM nginx:1.15.2-alpine
+COPY --from=client /usr/app/client/build /var/www
+COPY nginx /etc/nginx/nginx.conf
+COPY dhparam.pem /etc/ssl/certs/dhparam.pem
+COPY nginx-selfsigned.ctr /etc/ssl/certs/nginx-selfsigned.ctr
+COPY nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key
+EXPOSE 80
