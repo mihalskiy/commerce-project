@@ -2,9 +2,9 @@ version: '2'
 services:
   client:
     build:
-      context: ./client/
+      context: ./
     volumes:
-      - ./client/:/usr/app
+      - ./:/usr/app
       - /usr/app/node_modules
     ports:
       - "80:80"
